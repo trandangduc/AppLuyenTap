@@ -1,0 +1,72 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điều gì thúc đẩy bạn nhiều nhất?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center">
+
+        <RadioButton
+            android:id="@+id/radio_confidence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cảm thấy tự tin"
+            android:drawableStart="@drawable/ic_confidence"
+            android:drawablePadding="8dp"
+            android:drawableTint="?attr/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/radio_relax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giải tỏa căng thẳng"
+            android:drawableStart="@drawable/ic_relax"
+            android:drawablePadding="8dp"
+            android:drawableTint="?attr/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/radio_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cải thiện sức khỏe"
+            android:drawableStart="@drawable/ic_health"
+            android:drawablePadding="8dp"
+            android:drawableTint="?attr/colorPrimary"/>
+
+        <RadioButton
+            android:id="@+id/radio_energy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tăng cường năng lượng"
+            android:drawableStart="@drawable/ic_energy"
+            android:drawablePadding="8dp"
+            android:drawableTint="?attr/colorPrimary"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiếp theo"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

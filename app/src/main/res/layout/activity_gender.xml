@@ -1,0 +1,98 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Tiêu đề câu hỏi -->
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giới tính của bạn là gì?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="8dp" />
+
+    <!-- Nội dung phụ -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hãy cho chúng tôi biết thêm về bạn"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Layout chứa lựa chọn giới tính -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Nam -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="32dp">
+
+            <ImageView
+                android:id="@+id/img_male"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/male_image"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/txt_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp" />
+        </LinearLayout>
+
+        <!-- Nữ -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="32dp">
+
+            <ImageView
+                android:id="@+id/img_female"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/female_image"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/txt_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Nút Tiếp theo -->
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiếp theo"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"
+        android:padding="12dp" />
+
+</LinearLayout>
