@@ -7,42 +7,36 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.appluyentap.R
 
-class MainActivity : AppCompatActivity() {
+class Clickbody : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_clickbody)
 
         // Thiết lập lắng nghe sự kiện click cho các nút
-        val button1 = findViewById<Button>(R.id.button)
-        val button2 = findViewById<Button>(R.id.button2)
-        val button3 = findViewById<Button>(R.id.button3)
-        val button4 = findViewById<Button>(R.id.button4)
+        val button1 = findViewById<Button>(R.id.btntoanthan)
+        val button2 = findViewById<Button>(R.id.btncanhtay)
+        val button3 = findViewById<Button>(R.id.btnnguc)
+        val button4 = findViewById<Button>(R.id.btnbung)
 
-        // Chuyển qua trang Ít vận động
+        // Xử lý sự kiện click cho các nút
         button1.setOnClickListener {
-            val intent = Intent(this, ActivityItVanDong::class.java)
+            val intent = Intent(this, ToanthanActivity::class.java)
             startActivity(intent)
+            // Xử lý cho button 1
         }
 
-        // Chuyển qua trang Hơi tích cực
         button2.setOnClickListener {
-            val intent = Intent(this, ActivityHoiTichCuc::class.java)
-            startActivity(intent)
+            // Xử lý cho button 2
         }
 
-        // Chuyển qua trang Tích cực vừa phải
         button3.setOnClickListener {
-            val intent = Intent(this, ActivityTichCucVuaPhai::class.java)
-            startActivity(intent)
+            // Xử lý cho button 3
         }
 
-        // Chuyển qua trang Rất tích cực
         button4.setOnClickListener {
-            val intent = Intent(this, ActivityRatTichCuc::class.java)
-            startActivity(intent)
+            // Xử lý cho button 4
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
