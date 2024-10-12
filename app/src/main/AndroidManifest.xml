@@ -10,36 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Apptapluyen"
+        android:theme="@style/Theme.AppLuyenTap"
         tools:targetApi="31">
         <activity
-            android:name=".Clickbody"
-            android:exported="true" />
-        <activity
-            android:name=".ActivityRatTichCuc"
+            android:name=".Levelofmovement"
             android:exported="false" />
-        <activity
-            android:name=".ActivityTichCucVuaPhai"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityHoiTichCuc"
-            android:exported="false" />
-        <activity android:name=".ActivityItVanDong" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ToanthanActivity"
-            android:exported="true">
-        </activity>
-
-
 
     </application>
 
