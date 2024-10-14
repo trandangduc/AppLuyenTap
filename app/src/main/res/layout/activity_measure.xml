@@ -1,0 +1,66 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn có thể chống đẩy bao nhiêu lần một lúc?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_beginner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_beginner"
+            android:text="Người bắt đầu\n3-5 lần chống đẩy"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:padding="16dp" />
+
+        <RadioButton
+            android:id="@+id/radio_intermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_intermediate"
+            android:text="Trung bình\n5-10 lần chống đẩy"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:padding="16dp" />
+
+        <RadioButton
+            android:id="@+id/radio_advanced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_advanced"
+            android:text="Nâng cao\nÍt nhất 10"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:padding="16dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiếp theo"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_gravity="center"/>
+</LinearLayout>
