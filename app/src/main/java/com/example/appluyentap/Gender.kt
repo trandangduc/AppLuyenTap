@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -19,7 +18,6 @@ class Gender : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_gender)
 
         // Liên kết các thành phần từ XML
@@ -37,15 +35,15 @@ class Gender : AppCompatActivity() {
         // Xử lý khi người dùng chọn Nam
         imgMale.setOnClickListener {
             selectedGender = "Nam"
-            imgMale.setBackgroundResource(R.drawable.selected_background) // Chọn nền cho hình Nam
-            imgFemale.setBackgroundResource(0) // Xóa viền của nữ nếu trước đó được chọn
+            imgMale.isSelected = true
+            imgFemale.isSelected = false
         }
 
-
+        // Xử lý khi người dùng chọn Nữ
         imgFemale.setOnClickListener {
             selectedGender = "Nữ"
-            imgFemale.setBackgroundResource(R.drawable.selected_background) // Chọn nền cho hình Nữ
-            imgMale.setBackgroundResource(0) // Xóa viền của nam nếu trước đó được chọn
+            imgFemale.isSelected = true
+            imgMale.isSelected = false
         }
 
         // Xử lý khi người dùng nhấn nút Tiếp theo

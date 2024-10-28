@@ -1,11 +1,34 @@
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:padding="16dp">
 
+    <!-- Nút Quay trở về -->
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/colorPrimary" />
+
+    <!-- Nút Bỏ qua -->
+    <Button
+        android:id="@+id/button_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selected_background"
+        android:text="Bỏ qua"
+        android:textColor="#101010"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tiêu đề câu hỏi -->
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
@@ -13,14 +36,22 @@
         android:text="Bạn có thể chống đẩy bao nhiêu lần một lúc?"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/button_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="16dp"
         android:paddingBottom="8dp" />
 
+    <!-- Nhóm RadioButton cho lựa chọn -->
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
 
         <RadioButton
             android:id="@+id/radio_beginner"
@@ -29,7 +60,6 @@
             android:drawableStart="@drawable/ic_beginner"
             android:text="Người bắt đầu\n3-5 lần chống đẩy"
             android:textSize="16sp"
-            android:layout_gravity="center"
             android:padding="16dp" />
 
         <RadioButton
@@ -39,7 +69,6 @@
             android:drawableStart="@drawable/ic_intermediate"
             android:text="Trung bình\n5-10 lần chống đẩy"
             android:textSize="16sp"
-            android:layout_gravity="center"
             android:padding="16dp" />
 
         <RadioButton
@@ -49,18 +78,22 @@
             android:drawableStart="@drawable/ic_advanced"
             android:text="Nâng cao\nÍt nhất 10"
             android:textSize="16sp"
-            android:layout_gravity="center"
             android:padding="16dp" />
     </RadioGroup>
 
+    <!-- Nút Tiếp theo -->
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tiếp theo"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/button_background"
-        android:textColor="@android:color/white"
+        android:background="@drawable/selected_background"
         android:padding="12dp"
-        android:layout_gravity="center"/>
-</LinearLayout>
+        android:text="Tiếp theo"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
