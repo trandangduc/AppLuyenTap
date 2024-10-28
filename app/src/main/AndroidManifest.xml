@@ -21,12 +21,6 @@
         <activity
             android:name=".Levelofmovement"
             android:exported="true" />
-        <activity
-            android:name=".Impulse"
-            android:exported="true" />
-        <activity
-            android:name=".Gender"
-            android:exported="true" />
     </application>
 
 </manifest>

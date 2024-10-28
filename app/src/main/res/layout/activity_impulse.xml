@@ -1,10 +1,31 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp">
+
+    <!-- Nút Quay trở về -->
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorPrimary" />
+
+    <!-- Nút Bỏ qua -->
+    <Button
+        android:id="@+id/button_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Bỏ qua"
+        android:textColor="#101010"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/question"
@@ -13,60 +34,80 @@
         android:text="Điều gì thúc đẩy bạn nhiều nhất?"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_gravity="center"/>
+        app:layout_constraintTop_toBottomOf="@id/button_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
+    <!-- Các Button thay thế cho RadioButton -->
+    <Button
+        android:id="@+id/btn_confidence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center">
+        android:background="@drawable/button_background"
+        android:text="Cảm thấy tự tin"
+        android:drawableStart="@drawable/ic_confidence"
+        android:drawablePadding="8dp"
+        android:drawableTint="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <RadioButton
-            android:id="@+id/radio_confidence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cảm thấy tự tin"
-            android:drawableStart="@drawable/ic_confidence"
-            android:drawablePadding="8dp"
-            android:drawableTint="?attr/colorPrimary"/>
+    <Button
+        android:id="@+id/btn_relax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Giải tỏa căng thẳng"
+        android:drawableStart="@drawable/ic_relax"
+        android:drawablePadding="8dp"
+        android:drawableTint="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/btn_confidence"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <RadioButton
-            android:id="@+id/radio_relax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Giải tỏa căng thẳng"
-            android:drawableStart="@drawable/ic_relax"
-            android:drawablePadding="8dp"
-            android:drawableTint="?attr/colorPrimary"/>
+    <Button
+        android:id="@+id/btn_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Cải thiện sức khỏe"
+        android:drawableStart="@drawable/ic_health"
+        android:drawablePadding="8dp"
+        android:drawableTint="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/btn_relax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <RadioButton
-            android:id="@+id/radio_health"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cải thiện sức khỏe"
-            android:drawableStart="@drawable/ic_health"
-            android:drawablePadding="8dp"
-            android:drawableTint="?attr/colorPrimary"/>
+    <Button
+        android:id="@+id/btn_energy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Tăng cường năng lượng"
+        android:drawableStart="@drawable/ic_energy"
+        android:drawablePadding="8dp"
+        android:drawableTint="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/btn_health"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
-        <RadioButton
-            android:id="@+id/radio_energy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tăng cường năng lượng"
-            android:drawableStart="@drawable/ic_energy"
-            android:drawablePadding="8dp"
-            android:drawableTint="?attr/colorPrimary"/>
-
-    </RadioGroup>
-
+    <!-- Nút Tiếp theo -->
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/selected_background"
+        android:padding="12dp"
         android:text="Tiếp theo"
-        android:layout_marginTop="24dp"
-        android:layout_gravity="center"/>
-
-</LinearLayout>
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
