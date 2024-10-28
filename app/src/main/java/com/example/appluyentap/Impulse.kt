@@ -1,8 +1,10 @@
 package com.example.appluyentap
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -15,10 +17,14 @@ class Impulse : AppCompatActivity() {
     private lateinit var btnEnergy: Button
     private lateinit var btnNext: Button
 
+    // Danh sách trạng thái nút
+    private val buttonStates = BooleanArray(4) // Sử dụng mảng để theo dõi trạng thái của các nút
+
     private var selectedAnswer: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_impulse)
 
         // Áp dụng WindowInsets để hỗ trợ cử chỉ hệ thống
@@ -35,25 +41,24 @@ class Impulse : AppCompatActivity() {
         btnEnergy = findViewById(R.id.btn_energy)
         btnNext = findViewById(R.id.btn_next)
 
+        // Đặt màu nền mặc định cho các nút
+        setDefaultButtonColors()
+
         // Set up các listener cho các Button để lưu lựa chọn
         btnConfidence.setOnClickListener {
-            selectedAnswer = "Cảm thấy tự tin"
-            showToast("Bạn đã chọn: Cảm thấy tự tin")
+            toggleButtonState(0, btnConfidence, "Cảm thấy tự tin")
         }
 
         btnRelax.setOnClickListener {
-            selectedAnswer = "Giải tỏa căng thẳng"
-            showToast("Bạn đã chọn: Giải tỏa căng thẳng")
+            toggleButtonState(1, btnRelax, "Giải tỏa căng thẳng")
         }
 
         btnHealth.setOnClickListener {
-            selectedAnswer = "Cải thiện sức khỏe"
-            showToast("Bạn đã chọn: Cải thiện sức khỏe")
+            toggleButtonState(2, btnHealth, "Cải thiện sức khỏe")
         }
 
         btnEnergy.setOnClickListener {
-            selectedAnswer = "Tăng cường năng lượng"
-            showToast("Bạn đã chọn: Tăng cường năng lượng")
+            toggleButtonState(3, btnEnergy, "Tăng cường năng lượng")
         }
 
         // Listener cho nút Tiếp theo
@@ -64,6 +69,41 @@ class Impulse : AppCompatActivity() {
                 Toast.makeText(this@Impulse, "Vui lòng chọn một tùy chọn", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    // Hàm để chọn nút và đổi màu
+    private fun toggleButtonState(index: Int, selectedButton: Button, answer: String) {
+        // Đặt lại màu cho tất cả các nút
+        resetButtonColors()
+
+        // Thay đổi trạng thái
+        buttonStates[index] = !buttonStates[index]
+
+        // Cập nhật màu sắc của nút
+        if (buttonStates[index]) {
+            selectedButton.setBackgroundColor(Color.parseColor("#FF5722")) // Màu khi nút được chọn
+            selectedAnswer = answer
+            showToast("Bạn đã chọn: $answer")
+        } else {
+            selectedButton.setBackgroundColor(Color.WHITE) // Trả về màu trắng
+            selectedAnswer = null
+        }
+    }
+
+    // Hàm khôi phục màu cho tất cả các nút
+    private fun resetButtonColors() {
+        btnConfidence.setBackgroundColor(Color.WHITE)
+        btnRelax.setBackgroundColor(Color.WHITE)
+        btnHealth.setBackgroundColor(Color.WHITE)
+        btnEnergy.setBackgroundColor(Color.WHITE)
+    }
+
+    // Hàm đặt màu nền mặc định cho các nút
+    private fun setDefaultButtonColors() {
+        btnConfidence.setBackgroundColor(Color.WHITE)
+        btnRelax.setBackgroundColor(Color.WHITE)
+        btnHealth.setBackgroundColor(Color.WHITE)
+        btnEnergy.setBackgroundColor(Color.WHITE)
     }
 
     // Hàm hiển thị Toast thông báo

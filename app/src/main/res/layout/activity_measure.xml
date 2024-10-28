@@ -21,14 +21,13 @@
         android:id="@+id/button_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/selected_background"
-        android:text="Bỏ qua"
+        android:background="@drawable/button_background"        android:text="Bỏ qua"
         android:textColor="#101010"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Tiêu đề câu hỏi -->
+
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
@@ -36,15 +35,13 @@
         android:text="Bạn có thể chống đẩy bao nhiêu lần một lúc?"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="#101010"
         app:layout_constraintTop_toBottomOf="@id/button_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp" />
+        android:layout_marginTop="16dp"/>
 
-    <!-- Nhóm RadioButton cho lựa chọn -->
-    <RadioGroup
-        android:id="@+id/radioGroup"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -53,8 +50,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp">
 
-        <RadioButton
-            android:id="@+id/radio_beginner"
+        <Button
+            android:id="@+id/button_beginner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_beginner"
@@ -62,8 +59,8 @@
             android:textSize="16sp"
             android:padding="16dp" />
 
-        <RadioButton
-            android:id="@+id/radio_intermediate"
+        <Button
+            android:id="@+id/button_intermediate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_intermediate"
@@ -71,25 +68,24 @@
             android:textSize="16sp"
             android:padding="16dp" />
 
-        <RadioButton
-            android:id="@+id/radio_advanced"
+        <Button
+            android:id="@+id/button_advanced"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_advanced"
             android:text="Nâng cao\nÍt nhất 10"
             android:textSize="16sp"
             android:padding="16dp" />
-    </RadioGroup>
+    </LinearLayout>
 
     <!-- Nút Tiếp theo -->
     <Button
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/selected_background"
-        android:padding="12dp"
+        android:background="@drawable/button_background"        android:padding="12dp"
         android:text="Tiếp theo"
-        android:textColor="@android:color/white"
+        android:textColor="#101010"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
