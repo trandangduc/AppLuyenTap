@@ -1,36 +1,32 @@
-<!-- res/layout/exercise_item.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/exercise_image"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/ic_exercise_icon" />
+    <VideoView
+        android:id="@+id/exerciseVideo"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:paddingStart="16dp">
+        android:layout_marginStart="16dp">
 
         <TextView
-            android:id="@+id/exercise_name"
+            android:id="@+id/exerciseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Exercise Name"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/exercise_reps"
+            android:id="@+id/exerciseReps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="x16"
             android:textSize="14sp" />
     </LinearLayout>
 
