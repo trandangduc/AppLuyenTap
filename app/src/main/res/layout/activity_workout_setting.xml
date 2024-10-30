@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".WorkoutSetting">
+
+        <!-- Mục "Giới tính" -->
+
+        <!-- Mục "Nghỉ khi tập" -->
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="118dp"
+            android:text="CÀI ĐẶT TẬP LUYỆN"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Mục "Thời gian đếm ngược" -->
+
+        <LinearLayout
+            android:id="@+id/layoutGeneralSetting"
+            android:layout_width="260dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="64dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openGenderSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            <ImageView
+                android:id="@+id/iconGender"
+                android:layout_width="41dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Giới tính"
+                android:src="@drawable/baseline_person_24" />
+
+            <TextView
+                android:id="@+id/textGenderSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Giới tính"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutRestSetting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openRestSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutGeneralSetting">
+
+            <ImageView
+                android:id="@+id/iconRestSetting"
+                android:layout_width="43dp"
+                android:layout_height="59dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Nghỉ khi tập"
+                android:src="@drawable/baseline_coffee_24" />
+
+            <TextView
+                android:id="@+id/textRestSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Nghỉ khi tập"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutCountdownSetting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:onClick="openCountdownSetting"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutRestSetting">
+
+            <ImageView
+                android:id="@+id/iconCountdownSetting"
+                android:layout_width="46dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Thời gian đếm ngược"
+                android:src="@drawable/baseline_timer_24" />
+
+            <TextView
+                android:id="@+id/textCountdownSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Thời gian đếm ngược"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Mục "Lựa chọn âm thanh" -->
+        <LinearLayout
+            android:id="@+id/layoutSoundSetting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:onClick="openSoundSetting"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutCountdownSetting">
+
+            <ImageView
+                android:id="@+id/iconSoundSetting"
+                android:layout_width="43dp"
+                android:layout_height="49dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Lựa chọn âm thanh"
+                android:src="@drawable/baseline_surround_sound_24" />
+
+            <TextView
+                android:id="@+id/textSoundSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Lựa chọn âm thanh"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Mục "Khởi động lại quá trình" -->
+        <LinearLayout
+            android:id="@+id/layoutRestartProcess"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:onClick="openRestartProcess"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutSoundSetting">
+
+            <ImageView
+                android:id="@+id/iconRestartProcess"
+                android:layout_width="43dp"
+                android:layout_height="49dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Khởi động lại quá trình"
+                android:src="@drawable/baseline_restart_alt_24" />
+
+            <TextView
+                android:id="@+id/textRestartProcess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Khởi động lại quá trình"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="46dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/baseline_arrow_back_24" />
+
+        <!-- Mục "Đồng bộ với Health Connect" -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
