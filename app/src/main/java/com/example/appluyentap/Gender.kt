@@ -1,5 +1,6 @@
 package com.example.appluyentap
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -51,7 +52,7 @@ class Gender : AppCompatActivity() {
             if (selectedGender != null) {
                 Toast.makeText(this, "Bạn đã chọn: $selectedGender", Toast.LENGTH_SHORT).show()
                 // Chuyển đến activity hoặc hành động tiếp theo
-                // startActivity(Intent(this, NextActivity::class.java))
+                 startActivity(Intent(this, homepage::class.java))
             } else {
                 Toast.makeText(this, "Vui lòng chọn một giới tính", Toast.LENGTH_SHORT).show()
             }
