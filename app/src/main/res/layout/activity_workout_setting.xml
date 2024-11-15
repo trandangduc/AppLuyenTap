@@ -11,35 +11,55 @@
         android:layout_height="wrap_content"
         tools:context=".WorkoutSetting">
 
+        <!-- Header: "CÀI ĐẶT TẬP LUYỆN" with back icon -->
+
         <!-- Mục "Giới tính" -->
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="46dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Quay lại"
+                android:src="@drawable/baseline_arrow_back_24" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="CÀI ĐẶT TẬP LUYỆN"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <!-- Mục "Nghỉ khi tập" -->
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="118dp"
-            android:text="CÀI ĐẶT TẬP LUYỆN"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Mục "Thời gian đếm ngược" -->
 
         <LinearLayout
             android:id="@+id/layoutGeneralSetting"
-            android:layout_width="260dp"
-            android:layout_height="78dp"
+            android:layout_width="372dp"
+            android:layout_height="96dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="24dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openGenderSetting"
             android:orientation="horizontal"
             android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView1">
+            app:layout_constraintTop_toBottomOf="@+id/headerLayout">
 
             <ImageView
                 android:id="@+id/iconGender"
@@ -62,9 +82,9 @@
 
         <LinearLayout
             android:id="@+id/layoutRestSetting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_width="372dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="16dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openRestSetting"
             android:orientation="horizontal"
@@ -93,13 +113,13 @@
 
         <LinearLayout
             android:id="@+id/layoutCountdownSetting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="372dp"
+            android:layout_height="96dp"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="12dp"
             android:onClick="openCountdownSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutRestSetting">
 
@@ -125,13 +145,13 @@
         <!-- Mục "Lựa chọn âm thanh" -->
         <LinearLayout
             android:id="@+id/layoutSoundSetting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="372dp"
+            android:layout_height="96dp"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="12dp"
             android:onClick="openSoundSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutCountdownSetting">
 
@@ -157,13 +177,13 @@
         <!-- Mục "Khởi động lại quá trình" -->
         <LinearLayout
             android:id="@+id/layoutRestartProcess"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="372dp"
+            android:layout_height="96dp"
             android:layout_marginTop="16dp"
-            android:orientation="horizontal"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="12dp"
             android:onClick="openRestartProcess"
+            android:orientation="horizontal"
+            android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutSoundSetting">
 
@@ -185,18 +205,6 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="46dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/baseline_arrow_back_24" />
-
-        <!-- Mục "Đồng bộ với Health Connect" -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

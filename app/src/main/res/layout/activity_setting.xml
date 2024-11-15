@@ -35,10 +35,10 @@
 
         <LinearLayout
             android:id="@+id/layoutGeneralSetting"
-            android:layout_width="260dp"
-            android:layout_height="78dp"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="152dp"
+            android:layout_marginTop="124dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openGenderSetting"
             android:orientation="horizontal"
@@ -68,10 +68,10 @@
 
         <LinearLayout
             android:id="@+id/layoutWorkoutSetting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="53dp"
+            android:layout_marginTop="32dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openGeneralSetting"
             android:orientation="horizontal"
@@ -100,8 +100,8 @@
 
         <LinearLayout
             android:id="@+id/layoutTTSSetting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="21dp"
             android:background="?android:attr/selectableItemBackground"
@@ -132,8 +132,8 @@
 
         <LinearLayout
             android:id="@+id/layoutAssess"
-            android:layout_width="232dp"
-            android:layout_height="81dp"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
             android:background="?android:attr/selectableItemBackground"
@@ -164,8 +164,8 @@
 
         <LinearLayout
             android:id="@+id/layoutFeedBack"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
             android:background="?android:attr/selectableItemBackground"

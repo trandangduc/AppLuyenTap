@@ -13,13 +13,19 @@
         android:theme="@style/Theme.AppLuyenTap"
         tools:targetApi="31">
         <activity
+            android:name=".Goal"
+            android:exported="false" />
+        <activity
             android:name=".Clickbody"
             android:exported="true" />
         <activity
             android:name=".Targetpage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Levelofmovement"
+            android:exported="true" />
+        <activity
+            android:name=".Setting"
             android:exported="true" />
     </application>
 
