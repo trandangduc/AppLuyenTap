@@ -1,20 +1,24 @@
 package com.example.appluyentap
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Clickbody : AppCompatActivity() {
-    // Biến trạng thái để kiểm tra xem nút có đang ở trạng thái đã nhấn hay không
-    private var isButton1Clicked = false
-    private var isButton2Clicked = false
-    private var isButton3Clicked = false
-    private var isButton4Clicked = false
-    private var isButton5Clicked = false
+
+    private lateinit var buttonToanThan: Button
+    private lateinit var buttonCanhTay: Button
+    private lateinit var buttonNguc: Button
+    private lateinit var buttonBung: Button
+    private lateinit var buttonChan: Button
+    private lateinit var buttonNext: Button
+    private lateinit var buttonSkip: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,60 +32,73 @@ class Clickbody : AppCompatActivity() {
             insets
         }
 
-        // Tìm các nút trong layout và đặt sự kiện click
-        val button1: Button = findViewById(R.id.button12)
-        val button2: Button = findViewById(R.id.button14)
-        val button3: Button = findViewById(R.id.button15)
-        val button4: Button = findViewById(R.id.button16)
-        val button5: Button = findViewById(R.id.button17)
-
-        // Sự kiện nhấn cho button1
-        button1.setOnClickListener {
-            isButton1Clicked = !isButton1Clicked
-            if (isButton1Clicked) {
-                button1.setBackgroundColor(Color.parseColor("#673AB7")) // Màu tím
-            } else {
-                button1.setBackgroundColor(Color.WHITE) // Màu mặc định là màu trắng
-            }
+        // Khởi tạo các nút
+        buttonToanThan = findViewById(R.id.buttonToanThan)
+        buttonCanhTay = findViewById(R.id.buttonCanhTay)
+        buttonNguc = findViewById(R.id.buttonNguc)
+        buttonBung = findViewById(R.id.buttonBung)
+        buttonChan = findViewById(R.id.buttonChan)
+        buttonNext = findViewById(R.id.button25) // Nút "Tiếp theo"
+        buttonSkip = findViewById(R.id.buttonNext) // Nút "Bỏ qua"
+        val imageback   = findViewById<ImageButton>(R.id.Targetback)
+        // Thêm sự kiện cho nút Toàn thân
+        buttonToanThan.setOnClickListener {
+            setButtonColors(Color.BLUE, Color.WHITE)
+        }
+        imageback.setOnClickListener {
+            val intent = Intent(this, Gender  ::class.java)
+            startActivity(intent)
+        }
+        // Thêm sự kiện cho các nút khác
+        buttonCanhTay.setOnClickListener {
+            setSingleButtonColor(buttonCanhTay)
         }
 
-        // Sự kiện nhấn cho button2
-        button2.setOnClickListener {
-            isButton2Clicked = !isButton2Clicked
-            if (isButton2Clicked) {
-                button2.setBackgroundColor(Color.parseColor("#673AB7"))
-            } else {
-                button2.setBackgroundColor(Color.WHITE)
-            }
+        buttonNguc.setOnClickListener {
+            setSingleButtonColor(buttonNguc)
         }
 
-        // Sự kiện nhấn cho button3
-        button3.setOnClickListener {
-            isButton3Clicked = !isButton3Clicked
-            if (isButton3Clicked) {
-                button3.setBackgroundColor(Color.parseColor("#673AB7"))
-            } else {
-                button3.setBackgroundColor(Color.WHITE)
-            }
+        buttonBung.setOnClickListener {
+            setSingleButtonColor(buttonBung)
         }
 
-        // Sự kiện nhấn cho button4
-        button4.setOnClickListener {
-            isButton4Clicked = !isButton4Clicked
-            if (isButton4Clicked) {
-                button4.setBackgroundColor(Color.parseColor("#673AB7"))
-            } else {
-                button4.setBackgroundColor(Color.WHITE)
-            }
+        buttonChan.setOnClickListener {
+            setSingleButtonColor(buttonChan)
         }
 
-        // Sự kiện nhấn cho button5
-        button5.setOnClickListener {
-            isButton5Clicked = !isButton5Clicked
-            if (isButton5Clicked) {
-                button5.setBackgroundColor(Color.parseColor("#673AB7"))
-            } else {
-                button5.setBackgroundColor(Color.WHITE)
+        // Thêm sự kiện cho nút Tiếp theo
+        buttonNext.setOnClickListener {
+            val intent = Intent(this, Goal::class.java)
+            startActivity(intent)
+        }
+
+        // Thêm sự kiện cho nút Bỏ qua
+        buttonSkip.setOnClickListener {
+            val intent = Intent(this, Goal  ::class.java)
+            startActivity(intent)
+        }
+
+    }
+
+    private fun setButtonColors(backgroundColor: Int, textColor: Int) {
+        val buttons = arrayOf(buttonToanThan, buttonCanhTay, buttonNguc, buttonBung, buttonChan)
+        for (button in buttons) {
+            button.setBackgroundColor(backgroundColor)
+            button.setTextColor(textColor)
+        }
+    }
+
+    private fun setSingleButtonColor(selectedButton: Button) {
+        // Đặt màu nền cho nút đã chọn
+        selectedButton.setBackgroundColor(Color.BLUE) // Màu nền nút được chọn
+        selectedButton.setTextColor(Color.WHITE) // Màu chữ của nút được chọn
+
+        // Đặt màu cho các nút khác về mặc định
+        val buttons = arrayOf(buttonToanThan, buttonCanhTay, buttonNguc, buttonBung, buttonChan)
+        for (button in buttons) {
+            if (button != selectedButton) {
+                button.setBackgroundColor(Color.WHITE) // Màu nền mặc định
+                button.setTextColor(Color.BLACK) // Màu chữ mặc định
             }
         }
     }

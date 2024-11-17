@@ -15,10 +15,10 @@ class Levelofmovement : AppCompatActivity() {
         setContentView(R.layout.activity_levelofmovement)
 
         // Thiết lập lắng nghe sự kiện click cho các nút
-        val button1 = findViewById<Button>(R.id.btnfew)
-        val button2 = findViewById<Button>(R.id.btnaverage)
-        val button3 = findViewById<Button>(R.id.btnmany)
-        val button4 = findViewById<Button>(R.id.btnlot)
+        val button1 = findViewById<Button>(R.id.buttonItVanDong)
+        val button2 = findViewById<Button>(R.id.buttonHoiTichCuc)
+        val button3 = findViewById<Button>(R.id.buttonTichCucVuaPhai)
+        val button4 = findViewById<Button>(R.id.buttonRatTichCuc)
 
         // Chuyển qua trang Ít vận động
         button1.setOnClickListener {
