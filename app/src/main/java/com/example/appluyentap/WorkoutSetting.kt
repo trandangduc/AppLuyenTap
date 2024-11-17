@@ -14,7 +14,7 @@ class WorkoutSetting : AppCompatActivity() {
         setContentView(R.layout.activity_workout_setting)
 
         // Thiết lập hành động quay lại khi nhấn vào ImageView
-        val backButton = findViewById<ImageView>(R.id.imageView6)
+        val backButton = findViewById<ImageView>(R.id.backgeneral)
         backButton.setOnClickListener {
             onBackPressed() // Quay về trang trước đó
         }

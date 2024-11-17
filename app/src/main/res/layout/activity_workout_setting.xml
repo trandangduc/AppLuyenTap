@@ -9,9 +9,9 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".WorkoutSetting">
+        tools:context=".GeneralSetting">
 
-        <!-- Header: "CÀI ĐẶT TẬP LUYỆN" with back icon -->
+        <!-- Header chứa nút quay lại và tiêu đề "CÀI ĐẶT TẬP LUYỆN" -->
 
         <!-- Mục "Giới tính" -->
         <LinearLayout
@@ -20,16 +20,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="46dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="16dp"
+                android:id="@+id/backgeneral"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
                 android:contentDescription="Quay lại"
                 android:src="@drawable/baseline_arrow_back_24" />
 
@@ -37,34 +38,29 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="CÀI ĐẶT TẬP LUYỆN"
-                android:textSize="30sp"
+                android:layout_marginStart="16dp"
+                android:text="Cài đặt tập luyện"
+                android:textSize="24sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-        <!-- Mục "Nghỉ khi tập" -->
-
-        <!-- Mục "Thời gian đếm ngược" -->
 
         <LinearLayout
             android:id="@+id/layoutGeneralSetting"
-            android:layout_width="372dp"
-            android:layout_height="96dp"
-            android:layout_marginStart="4dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openGenderSetting"
             android:orientation="horizontal"
             android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/headerLayout">
 
             <ImageView
                 android:id="@+id/iconGender"
-                android:layout_width="41dp"
-                android:layout_height="52dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Giới tính"
                 android:src="@drawable/baseline_person_24" />
@@ -73,29 +69,30 @@
                 android:id="@+id/textGenderSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:text="Giới tính"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-
         </LinearLayout>
 
+        <!-- Mục "Nghỉ khi tập" -->
         <LinearLayout
             android:id="@+id/layoutRestSetting"
-            android:layout_width="372dp"
-            android:layout_height="96dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openRestSetting"
             android:orientation="horizontal"
             android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutGeneralSetting">
 
             <ImageView
                 android:id="@+id/iconRestSetting"
-                android:layout_width="43dp"
-                android:layout_height="59dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Nghỉ khi tập"
                 android:src="@drawable/baseline_coffee_24" />
@@ -104,107 +101,77 @@
                 android:id="@+id/textRestSetting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:text="Nghỉ khi tập"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-
         </LinearLayout>
 
+        <!-- Mục mới 1 -->
         <LinearLayout
-            android:id="@+id/layoutCountdownSetting"
-            android:layout_width="372dp"
-            android:layout_height="96dp"
+            android:id="@+id/layoutNewSetting1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="?android:attr/selectableItemBackground"
-            android:onClick="openCountdownSetting"
+            android:onClick="openNewSetting1"
             android:orientation="horizontal"
             android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutRestSetting">
+            app:layout_constraintTop_toBottomOf="@+id/layoutRestSetting">
 
             <ImageView
-                android:id="@+id/iconCountdownSetting"
-                android:layout_width="46dp"
-                android:layout_height="60dp"
+                android:id="@+id/iconNewSetting1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
-                android:contentDescription="Thời gian đếm ngược"
-                android:src="@drawable/baseline_timer_24" />
-
-            <TextView
-                android:id="@+id/textCountdownSetting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Thời gian đếm ngược"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <!-- Mục "Lựa chọn âm thanh" -->
-        <LinearLayout
-            android:id="@+id/layoutSoundSetting"
-            android:layout_width="372dp"
-            android:layout_height="96dp"
-            android:layout_marginTop="16dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="openSoundSetting"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutCountdownSetting">
-
-            <ImageView
-                android:id="@+id/iconSoundSetting"
-                android:layout_width="43dp"
-                android:layout_height="49dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="Lựa chọn âm thanh"
+                android:contentDescription="Mục mới 1"
                 android:src="@drawable/baseline_surround_sound_24" />
 
             <TextView
-                android:id="@+id/textSoundSetting"
+                android:id="@+id/Sound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Lựa chọn âm thanh"
+                android:layout_gravity="center_vertical"
+                android:text="Lực chọn âm thanh"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-
         </LinearLayout>
 
-        <!-- Mục "Khởi động lại quá trình" -->
+        <!-- Mục mới 2 -->
         <LinearLayout
-            android:id="@+id/layoutRestartProcess"
-            android:layout_width="372dp"
-            android:layout_height="96dp"
+            android:id="@+id/layoutNewSetting2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="?android:attr/selectableItemBackground"
-            android:onClick="openRestartProcess"
+            android:onClick="openNewSetting2"
             android:orientation="horizontal"
             android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutSoundSetting">
+            app:layout_constraintTop_toBottomOf="@+id/layoutNewSetting1">
 
             <ImageView
-                android:id="@+id/iconRestartProcess"
-                android:layout_width="43dp"
-                android:layout_height="49dp"
+                android:id="@+id/iconNewSetting2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
-                android:contentDescription="Khởi động lại quá trình"
+                android:contentDescription="Mục mới 2"
                 android:src="@drawable/baseline_restart_alt_24" />
 
             <TextView
-                android:id="@+id/textRestartProcess"
+                android:id="@+id/textNewSetting2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_vertical"
                 android:text="Khởi động lại quá trình"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-
         </LinearLayout>
+
+        <!-- Các phần khác nếu cần... -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

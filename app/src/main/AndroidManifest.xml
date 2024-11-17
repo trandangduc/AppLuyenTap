@@ -42,6 +42,14 @@
         <activity
             android:name=".Impulse"
             android:exported="true" />
+        <activity android:name=".WorkoutSetting">
+
+        </activity>
+        <activity android:name=".GeneralSetting">
+
+        </activity>
+
+
     </application>
 
 </manifest>
