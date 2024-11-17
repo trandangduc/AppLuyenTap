@@ -1,137 +1,116 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    tools:context=".Gender">
 
-    <!-- Nút Quay trở về -->
-    <ImageButton
-        android:id="@+id/button_back"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
-        android:background="@null"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/colorPrimary" />
-
-    <!-- Nút Bỏ qua -->
-    <Button
-        android:id="@+id/button_skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bỏ qua"
-        android:textColor="#101010"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <!-- Tiêu đề câu hỏi -->
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Giới tính của bạn là gì?"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/button_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="8dp" />
-
-    <!-- Nội dung phụ -->
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hãy cho chúng tôi biết thêm về bạn"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/question"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="16dp" />
-
-    <!-- Layout chứa lựa chọn giới tính -->
     <LinearLayout
-        android:id="@+id/layout_gender_choice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFFFF"
         android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/subtitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Nam -->
-        <LinearLayout
+
+        <Button
+            android:id="@+id/buttonNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginEnd="32dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/img_male"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/male_image"
-                android:background="@drawable/selected_background" />
-
-            <TextView
-                android:id="@+id/txt_male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nam"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:paddingTop="8dp" />
-        </LinearLayout>
-
-        <!-- Nữ -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="32dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/img_female"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/female_image"
-                android:background="@drawable/selected_background" />
-
-            <TextView
-                android:id="@+id/txt_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nữ"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:paddingTop="8dp" />
-        </LinearLayout>
+            android:layout_marginLeft="200dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFFFF"
+            android:text="Bỏ qua"
+            android:textColor="#040404" />
     </LinearLayout>
 
-    <!-- Nút Tiếp theo -->
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selected_background"
-        android:padding="12dp"
-        android:text="Tiếp theo"
-        android:textColor="#101010"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        android:textStyle="bold"
+        android:background="#FFFFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="24dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Hãy chọn giới tính của bạn"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center" />
+
+
+        <Button
+            android:id="@+id/buttonNam"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Nam"
+            android:textColor="@android:color/black"
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp"
+            />
+
+        <Button
+            android:id="@+id/buttonNu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:backgroundTint="#FFFFFF"
+            android:drawablePadding="8dp"
+            android:text="Nữ"
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp"
+            android:textColor="@android:color/black"
+             />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/button25"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="80dp"
+            android:text="Tiếp theo"
+            android:backgroundTint="#007BFF"
+            android:textColor="@android:color/white"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+
+           />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

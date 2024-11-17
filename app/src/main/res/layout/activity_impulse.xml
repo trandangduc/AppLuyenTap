@@ -1,120 +1,154 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Impulse">
 
-    <!-- Nút Quay trở về -->
-    <ImageButton
-        android:id="@+id/button_back"
-        android:layout_width="50dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@null"
-        android:src="@drawable/ic_back"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFFFF"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Nút Bỏ qua -->
-    <Button
-        android:id="@+id/button_skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:text="Bỏ qua"
-        android:background="@drawable/button_background"
-        android:textColor="#101010"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFFFF"
+            app:srcCompat="@drawable/baseline_arrow_back_24"
+            app:tint="#000000" /> <!-- Màu icon -->
 
-    <!-- Tiêu đề câu hỏi -->
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Điều gì thúc đẩy bạn nhiều nhất?"
-        android:textSize="18sp"
+        <Button
+            android:id="@+id/button21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFFFF"
+            android:text="Bỏ qua"
+            android:textColor="#040404" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
         android:textStyle="bold"
-        android:textColor="#101010"
-        app:layout_constraintTop_toBottomOf="@id/button_back"
+        android:background="#FFFFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <!-- Các Button thay thế cho RadioButton -->
-    <Button
-        android:id="@+id/btn_confidence"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:text="Cảm thấy tự tin"
-        android:drawableStart="@drawable/ic_confidence"
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Điều gì thúc đẩy bạn nhiều nhất"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center" />
+
+
+        <Button
+            android:id="@+id/btn_confidence"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:backgroundTint="#FFFFFF"
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/ic_confidence"
+            app:tint="#000000"
+            android:text="Cảm thấy tự tin "
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_relax"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:backgroundTint="#FFFFFF"
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/ic_relax"
+            app:tint="#000000"
         android:drawablePadding="8dp"
-        android:tint="#101010"
-        android:textColor="#101010"
-        app:layout_constraintTop_toBottomOf="@id/question"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <Button
-        android:id="@+id/btn_relax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
         android:text="Giải tỏa căng thẳng"
-        android:drawableStart="@drawable/ic_relax"
-        android:drawablePadding="8dp"
-        android:tint="#101010"
-        android:textColor="#101010"
-        app:layout_constraintTop_toBottomOf="@id/btn_confidence"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:textColor="@android:color/black" />
 
-    <Button
-        android:id="@+id/btn_health"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
+        <Button
+            android:id="@+id/btn_health"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:backgroundTint="#FFFFFF"
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/ic_health"
+            app:tint="#000000"
         android:text="Cải thiện sức khỏe"
-        android:drawableStart="@drawable/ic_health"
-        android:drawablePadding="8dp"
-        android:tint="#101010"
-        android:textColor="#101010"
-        app:layout_constraintTop_toBottomOf="@id/btn_relax"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:textColor="@android:color/black" />
 
-    <Button
-        android:id="@+id/btn_energy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
+        <Button
+            android:id="@+id/btn_energy"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:backgroundTint="#FFFFFF"
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/ic_energy"
+            app:tint="#000000"
         android:text="Tăng cường năng lượng"
-        android:drawableStart="@drawable/ic_energy"
-        android:drawablePadding="8dp"
-        android:tint="#101010"
-        android:textColor="#101010"
-        app:layout_constraintTop_toBottomOf="@id/btn_health"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:textColor="@android:color/black" />
 
-    <!-- Nút Tiếp theo -->
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
-        android:padding="12dp"
-        android:text="Tiếp theo"
-        android:textSize="16sp"
-        android:textColor="#101010"
-        app:layout_constraintBottom_toBottomOf="parent"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="24dp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="80dp"
+            android:text="Tiếp theo"
+            android:backgroundTint="#007BFF"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

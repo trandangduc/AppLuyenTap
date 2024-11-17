@@ -13,6 +13,18 @@
         android:theme="@style/Theme.AppLuyenTap"
         tools:targetApi="31">
         <activity
+            android:name=".RestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ExerciseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Menu"
+            android:exported="true" />
+        <activity
+            android:name=".Measure"
+            android:exported="true" />
+        <activity
             android:name=".Clickbody"
             android:exported="true" />
         <activity
@@ -20,6 +32,15 @@
             android:exported="false" />
         <activity
             android:name=".Levelofmovement"
+            android:exported="true" />
+        <activity
+            android:name=".Gender"
+            android:exported="true" />
+        <activity
+            android:name=".homepage"
+            android:exported="true" />
+        <activity
+            android:name=".Impulse"
             android:exported="true" />
     </application>
 

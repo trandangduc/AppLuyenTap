@@ -1,14 +1,13 @@
 package com.example.appluyentap
 
-// ExerciseAdapter.kt
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.recyclerview.widget.RecyclerView
+import data.Exercise
 
 class ExerciseAdapter(private val exercises: List<Exercise>) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
 
@@ -16,6 +15,13 @@ class ExerciseAdapter(private val exercises: List<Exercise>) : RecyclerView.Adap
         val nameTextView: TextView = itemView.findViewById(R.id.exerciseName)
         val repsTextView: TextView = itemView.findViewById(R.id.exerciseReps)
         val videoView: VideoView = itemView.findViewById(R.id.exerciseVideo)
+
+        // Hàm dừng phát video
+        fun stopVideo() {
+            if (videoView.isPlaying) {
+                videoView.stopPlayback()
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
@@ -39,6 +45,10 @@ class ExerciseAdapter(private val exercises: List<Exercise>) : RecyclerView.Adap
     }
 
     override fun getItemCount() = exercises.size
+
+    // Dừng video khi ViewHolder bị tái chế
+    override fun onViewRecycled(holder: ExerciseViewHolder) {
+        super.onViewRecycled(holder)
+        holder.stopVideo()
+    }
 }
-
-

@@ -1,7 +1,15 @@
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Trạng thái khi nhấn -->
-    <item android:state_pressed="true" android:drawable="@color/colorPressed" />
-    <!-- Trạng thái mặc định -->
-    <item android:drawable="@color/colorDefault" />
-</selector>
+<!-- res/drawable/button_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@android:color/white"/> <!-- Màu nền trắng -->
+
+    <corners android:radius="16dp"/> <!-- Bo góc -->
+
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black"/> <!-- Đường viền đen -->
+</shape>
+
+
 

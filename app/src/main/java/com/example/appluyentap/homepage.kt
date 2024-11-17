@@ -1,30 +1,30 @@
 package com.example.appluyentap
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import data.Exercise
 
 class homepage : AppCompatActivity() {
-    private var currentExerciseIndex = 0  // Biến theo dõi bài tập hiện tại
+    private var currentExerciseIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
 
         val exercises = listOf(
-            Exercise("Bật nhảy", "00:20", R.raw.ic_jump),
-            Exercise("Tập cơ bụng", "x16", R.raw.ic_crunch),
-            Exercise("Gập bụng chéo kiểu Nga", "x20", R.raw.ic_russian_twist),
-            Exercise("Leo núi", "x16", R.raw.ic_mountain_climber),
-            Exercise("Chạm gót chân", "x20", R.raw.ic_heel_touch),
-            Exercise("Nâng chân", "x16", R.raw.ic_leg_raise), // Thêm bài tập nâng chân
-            Exercise("Đo sàn", "00:20", R.raw.ic_plank), // Thêm bài tập đo sàn 00:20
-
+            Exercise("Bật nhảy", reps = "", time = "00:20", videoRes = R.raw.ic_jump),
+            Exercise("Tập cơ bụng", reps = "x16", time = "", videoRes = R.raw.ic_crunch),
+            Exercise("Gập bụng chéo kiểu Nga", reps = "x20", time = "", videoRes = R.raw.ic_russian_twist),
+            Exercise("Leo núi", reps = "x16", time = "", videoRes = R.raw.ic_mountain_climber),
+            Exercise("Chạm gót chân", reps = "x20", time = "", videoRes = R.raw.ic_heel_touch),
+            Exercise("Nâng chân", reps = "x16", time = "", videoRes = R.raw.ic_leg_raise),
+            Exercise("Đo sàn", reps = "", time = "00:20", videoRes = R.raw.ic_plank)
         )
-
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -32,17 +32,16 @@ class homepage : AppCompatActivity() {
 
         val startButton: Button = findViewById(R.id.startButton)
         startButton.setOnClickListener {
-            // Kiểm tra nếu vẫn còn bài tập để thực hiện
             if (currentExerciseIndex < exercises.size) {
                 val currentExercise = exercises[currentExerciseIndex]
 
-                // Thực hiện hành động (ở đây chỉ hiển thị tên bài tập)
-                Toast.makeText(this, "Bắt đầu: ${currentExercise.name}", Toast.LENGTH_SHORT).show()
+                // Mở ExerciseActivity và truyền bài tập hiện tại
+                val intent = Intent(this, ExerciseActivity::class.java)
+                intent.putExtra("exercise", currentExercise)
+                startActivity(intent)
 
-                // Tăng chỉ số bài tập lên để lần nhấn kế tiếp sẽ lấy bài tập tiếp theo
                 currentExerciseIndex++
             } else {
-                // Nếu đã hoàn thành tất cả các bài tập, thông báo và đặt lại index để lặp lại từ đầu
                 Toast.makeText(this, "Hoàn thành tất cả bài tập!", Toast.LENGTH_SHORT).show()
                 currentExerciseIndex = 0
             }

@@ -7,7 +7,7 @@
         <color name="my_custom_color">#FF0000</color>
         <color name="colorPressed">#007BFF</color> <!-- Màu khi nhấn -->
         <color name="colorDefault">#FFFFFF</color> <!-- Màu mặc định -->
-
+        <color name="colorBlack">#000000</color>
 
 
 

@@ -1,5 +1,6 @@
 package com.example.appluyentap
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -28,7 +29,7 @@ class Impulse : AppCompatActivity() {
         setContentView(R.layout.activity_impulse)
 
         // Áp dụng WindowInsets để hỗ trợ cử chỉ hệ thống
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btn_confidence)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -65,10 +66,15 @@ class Impulse : AppCompatActivity() {
         btnNext.setOnClickListener {
             if (selectedAnswer != null) {
                 Toast.makeText(this@Impulse, "Bạn đã chọn: $selectedAnswer", Toast.LENGTH_SHORT).show()
+
+                // Chuyển sang trang homepage
+                val intent = Intent(this@Impulse, Measure::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this@Impulse, "Vui lòng chọn một tùy chọn", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 
     // Hàm để chọn nút và đổi màu
@@ -79,13 +85,14 @@ class Impulse : AppCompatActivity() {
         // Thay đổi trạng thái
         buttonStates[index] = !buttonStates[index]
 
-        // Cập nhật màu sắc của nút
         if (buttonStates[index]) {
-            selectedButton.setBackgroundColor(Color.parseColor("#FF5722")) // Màu khi nút được chọn
+            selectedButton.setBackgroundColor(Color.parseColor("#007BFF")) // Màu nền khi nút được chọn
+            selectedButton.setTextColor(Color.WHITE) // Đổi màu văn bản thành trắng khi chọn
             selectedAnswer = answer
             showToast("Bạn đã chọn: $answer")
         } else {
-            selectedButton.setBackgroundColor(Color.WHITE) // Trả về màu trắng
+            selectedButton.setBackgroundColor(Color.WHITE) // Trả về màu nền trắng
+            selectedButton.setTextColor(Color.BLACK) // Đổi màu văn bản về đen khi bỏ chọn
             selectedAnswer = null
         }
     }
@@ -93,9 +100,13 @@ class Impulse : AppCompatActivity() {
     // Hàm khôi phục màu cho tất cả các nút
     private fun resetButtonColors() {
         btnConfidence.setBackgroundColor(Color.WHITE)
+        btnConfidence.setTextColor(Color.BLACK)
         btnRelax.setBackgroundColor(Color.WHITE)
+        btnRelax.setTextColor(Color.BLACK)
         btnHealth.setBackgroundColor(Color.WHITE)
+        btnHealth.setTextColor(Color.BLACK)
         btnEnergy.setBackgroundColor(Color.WHITE)
+        btnEnergy.setTextColor(Color.BLACK)
     }
 
     // Hàm đặt màu nền mặc định cho các nút
