@@ -65,7 +65,7 @@ class Measure : AppCompatActivity() {
             if (selectedAnswer != null) {
                 Toast.makeText(this, "Bạn đã chọn: $selectedAnswer", Toast.LENGTH_SHORT).show()
                 goToNextActivity()
-                val intent = Intent(this@Measure, Menu::class.java)
+                val intent = Intent(this@Measure, Levelofmovement::class.java)
                 startActivity(intent)
 
             } else {

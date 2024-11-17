@@ -40,15 +40,19 @@ class Clickbody : AppCompatActivity() {
         buttonChan = findViewById(R.id.buttonChan)
         buttonNext = findViewById(R.id.button25) // Nút "Tiếp theo"
         buttonSkip = findViewById(R.id.buttonNext) // Nút "Bỏ qua"
-        val imageback   = findViewById<ImageButton>(R.id.Targetback)
+        val imageback = findViewById<ImageButton>(R.id.Targetback)
+
         // Thêm sự kiện cho nút Toàn thân
         buttonToanThan.setOnClickListener {
             setButtonColors(Color.BLUE, Color.WHITE)
         }
+
+        // Thêm sự kiện cho nút "Back"
         imageback.setOnClickListener {
-            val intent = Intent(this, Gender  ::class.java)
-            startActivity(intent)
+            // Quay lại trang trước (trang Gender)
+            onBackPressed() // Lệnh này tự động quay lại trang trước
         }
+
         // Thêm sự kiện cho các nút khác
         buttonCanhTay.setOnClickListener {
             setSingleButtonColor(buttonCanhTay)
@@ -68,16 +72,17 @@ class Clickbody : AppCompatActivity() {
 
         // Thêm sự kiện cho nút Tiếp theo
         buttonNext.setOnClickListener {
-            val intent = Intent(this, Goal::class.java)
+            // Chuyển đến trang Impulse
+            val intent = Intent(this, Impulse::class.java)
             startActivity(intent)
         }
 
         // Thêm sự kiện cho nút Bỏ qua
         buttonSkip.setOnClickListener {
-            val intent = Intent(this, Goal  ::class.java)
+            // Chuyển đến trang Impulse
+            val intent = Intent(this, Impulse::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun setButtonColors(backgroundColor: Int, textColor: Int) {

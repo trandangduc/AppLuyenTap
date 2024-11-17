@@ -29,7 +29,7 @@
             android:exported="true" />
         <activity
             android:name=".Targetpage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Levelofmovement"
             android:exported="true" />
@@ -46,6 +46,8 @@
 
         </activity>
         <activity android:name=".GeneralSetting">
+        </activity>
+        <activity android:name=".Setting">
 
         </activity>
 

@@ -41,6 +41,7 @@ class Menu : AppCompatActivity() {
             Toast.makeText(this, "Hiển thị bài tập cho trình độ nâng cao", Toast.LENGTH_SHORT).show()
         }
 
+        // Thêm sự kiện khi chọn mục "Cài đặt"
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.workout -> {
@@ -57,6 +58,9 @@ class Menu : AppCompatActivity() {
                 }
                 R.id.settings -> {
                     Toast.makeText(this, "Cài đặt", Toast.LENGTH_SHORT).show()
+                    // Chuyển đến trang Cài đặt
+                    val intent = Intent(this, Setting::class.java)  // Chuyển tới SettingsActivity
+                    startActivity(intent)
                     true
                 }
                 else -> false
@@ -75,6 +79,7 @@ class Menu : AppCompatActivity() {
             .replace(R.id.main_container, fragment) // Đảm bảo `main_container` là ID của FrameLayout trong XML
             .commit()
     }
+
     // Hàm để chuyển sang homepage khi nhấn nút "Tiếp theo"
     private fun goToNextActivity() {
         val intent = Intent(this, homepage::class.java)

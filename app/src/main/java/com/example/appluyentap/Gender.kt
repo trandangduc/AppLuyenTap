@@ -57,7 +57,7 @@ class Gender : AppCompatActivity() {
             if (selectedGender != null) {
                 Toast.makeText(this, "Bạn đã chọn: $selectedGender", Toast.LENGTH_SHORT).show()
                 // Chuyển đến activity hoặc hành động tiếp theo
-                startActivity(Intent(this, Impulse::class.java))
+                startActivity(Intent(this, Clickbody::class.java))
             } else {
                 Toast.makeText(this, "Vui lòng chọn một giới tính", Toast.LENGTH_SHORT).show()
             }
