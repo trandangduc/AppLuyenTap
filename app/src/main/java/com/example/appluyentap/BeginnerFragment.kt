@@ -6,10 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import androidx.core.content.ContentProviderCompat
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 
 class BeginnerFragment : Fragment() {
@@ -38,7 +34,7 @@ class BeginnerFragment : Fragment() {
 
     private fun navigateToHomepage() {
         // Nếu bạn muốn mở một Activity mới
-        val intent = Intent(requireContext(), homepage::class.java)
+        val intent = Intent(requireContext(), ListExercise::class.java)
         startActivity(intent)
 
     }

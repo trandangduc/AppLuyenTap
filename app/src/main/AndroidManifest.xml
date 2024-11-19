@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppLuyenTap"
         tools:targetApi="31">
         <activity
+            android:name=".ListExercise"
+            android:exported="false" />
+        <activity
             android:name=".RestActivity"
             android:exported="true" />
         <activity
@@ -37,21 +40,11 @@
             android:name=".Gender"
             android:exported="true" />
         <activity
-            android:name=".homepage"
-            android:exported="true" />
-        <activity
             android:name=".Impulse"
             android:exported="true" />
-        <activity android:name=".WorkoutSetting">
-
-        </activity>
-        <activity android:name=".GeneralSetting">
-        </activity>
-        <activity android:name=".Setting">
-
-        </activity>
-
-
+        <activity android:name=".WorkoutSetting" />
+        <activity android:name=".GeneralSetting" />
+        <activity android:name=".Setting" />
     </application>
 
 </manifest>

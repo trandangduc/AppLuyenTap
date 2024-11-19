@@ -17,55 +17,34 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu) // Đảm bảo tên tệp XML là `activity_menu.xml`
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        loadFragment(BeginnerFragment())
+        loadFragment(HomeFragment())
 
-        val beginnerTab = findViewById<TextView>(R.id.beginner_tab)
-        val intermediateTab = findViewById<TextView>(R.id.intermediate_tab)
-        val advancedTab = findViewById<TextView>(R.id.advanced_tab)
 
-        beginnerTab.setOnClickListener {
-            setSelectedTextView(beginnerTab)
-            loadFragment(BeginnerFragment())
-            Toast.makeText(this, "Hiển thị bài tập cho người bắt đầu", Toast.LENGTH_SHORT).show()
-        }
-
-        intermediateTab.setOnClickListener {
-            setSelectedTextView(intermediateTab)
-            loadFragment(IntermediateFragment())
-            Toast.makeText(this, "Hiển thị bài tập cho trình độ trung bình", Toast.LENGTH_SHORT).show()
-        }
-
-        advancedTab.setOnClickListener {
-            setSelectedTextView(advancedTab)
-            loadFragment(AdvancedFragment())
-            Toast.makeText(this, "Hiển thị bài tập cho trình độ nâng cao", Toast.LENGTH_SHORT).show()
-        }
-
-        // Thêm sự kiện khi chọn mục "Cài đặt"
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.workout -> {
-                    Toast.makeText(this, "Tập luyện", Toast.LENGTH_SHORT).show()
+                    loadFragment(HomeFragment())
                     true
                 }
                 R.id.explore -> {
-                    Toast.makeText(this, "Khám phá", Toast.LENGTH_SHORT).show()
+                    loadFragment(ExploreFragment())
                     true
                 }
                 R.id.report -> {
-                    Toast.makeText(this, "Báo cáo", Toast.LENGTH_SHORT).show()
+                    loadFragment(ReportFragment())
                     true
                 }
                 R.id.settings -> {
-                    Toast.makeText(this, "Cài đặt", Toast.LENGTH_SHORT).show()
-                    // Chuyển đến trang Cài đặt
-                    val intent = Intent(this, Setting::class.java)  // Chuyển tới SettingsActivity
-                    startActivity(intent)
+                    loadFragment(SettingFragment())
                     true
                 }
                 else -> false
             }
         }
+
+
+
+
     }
 
     private fun setSelectedTextView(selected: TextView) {
@@ -80,9 +59,5 @@ class Menu : AppCompatActivity() {
             .commit()
     }
 
-    // Hàm để chuyển sang homepage khi nhấn nút "Tiếp theo"
-    private fun goToNextActivity() {
-        val intent = Intent(this, homepage::class.java)
-        startActivity(intent)
-    }
+
 }

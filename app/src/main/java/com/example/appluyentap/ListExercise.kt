@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import data.Exercise
 
-class homepage : AppCompatActivity() {
+class ListExercise : AppCompatActivity() {
     private var currentExerciseIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_homepage)
+        setContentView(R.layout.activity_list_exercise)
 
         val exercises = listOf(
             Exercise("Bật nhảy", reps = "", time = "00:20", videoRes = R.raw.ic_jump),
