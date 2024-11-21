@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".Setting">
+
+        <!-- Mục "Cài đặt tập luyện" -->
+
+        <!-- Mục "Tổng cài đặt" -->
+
+        <!-- Mục "Tùy chọn giọng nói (TTS)" -->
+
+        <!-- Mục "Đề xuất các tính năng khác" -->
+
+        <!-- Mục "Tùy chọn ngôn ngữ" -->
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="142dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="32dp"
+            android:text="CÀI ĐẶT"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutGeneralSetting"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="124dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openGenderSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            <ImageView
+                android:id="@+id/iconGender"
+                android:layout_width="41dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Giới tính"
+                android:src="@drawable/baseline_person_24" />
+
+            <TextView
+                android:id="@+id/textGenderSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tổng cài đặt"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutWorkoutSetting"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="32dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openGeneralSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            <ImageView
+                android:id="@+id/iconGeneralSetting"
+                android:layout_width="43dp"
+                android:layout_height="49dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Tổng cài đặt"
+                android:src="@drawable/baseline_settings_24" />
+
+            <TextView
+                android:id="@+id/textWorkoutSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Cài đặt tập luyện"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutTTSSetting"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openTTSSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutGeneralSetting">
+
+            <ImageView
+                android:id="@+id/iconTTS"
+                android:layout_width="41dp"
+                android:layout_height="51dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Tùy chọn giọng nói"
+                android:src="@drawable/baseline_mic_none_24" />
+
+            <TextView
+                android:id="@+id/textTTSSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tùy chọn giọng nói (TTS)"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAssess"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openFeatureSuggestion"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutTTSSetting">
+
+            <ImageView
+                android:id="@+id/iconFeatureSuggestion"
+                android:layout_width="43dp"
+                android:layout_height="49dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Đề xuất các tính năng khác"
+                android:src="@drawable/baseline_star_24" />
+
+            <TextView
+                android:id="@+id/textFeatureSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Đánh giá"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutFeedBack"
+            android:layout_width="375dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="openLanguageSetting"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutAssess">
+
+            <ImageView
+                android:id="@+id/iconLanguageSetting"
+                android:layout_width="43dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Tùy chọn ngôn ngữ"
+                android:src="@drawable/baseline_assignment_24" />
+
+            <TextView
+                android:id="@+id/textLanguageSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Phản hồi"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Mục "Đồng bộ với Health Connect" -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

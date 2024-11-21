@@ -113,7 +113,7 @@ class Measure : AppCompatActivity() {
 
     // Hàm để chuyển sang homepage khi nhấn nút "Tiếp theo"
     private fun goToNextActivity() {
-        val intent = Intent(this, homepage::class.java)
+        val intent = Intent(this, HomeFragment::class.java)
         startActivity(intent)
     }
 }
