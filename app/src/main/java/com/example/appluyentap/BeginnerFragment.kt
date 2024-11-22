@@ -28,17 +28,19 @@ class BeginnerFragment : Fragment() {
         view.findViewById<LinearLayout>(R.id.title1).setOnClickListener {
             navigateToHomepage()
         }
-
-
         }
 
     private fun navigateToHomepage() {
-        // Nếu bạn muốn mở một Activity mới
+        // Tạo Intent để mở ListExercise
         val intent = Intent(requireContext(), ListExercise::class.java)
+
+        // Truyền thêm dữ liệu thông qua Intent
+        intent.putExtra("BoPhan", "Bụng") // Giá trị "Bung" cho bộ phận
+        intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
+
+        // Bắt đầu Activity ListExercise
         startActivity(intent)
-
     }
-
 
     companion object {
         @JvmStatic

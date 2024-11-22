@@ -1,186 +1,359 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <LinearLayout
+        <!-- Tiêu đề -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn cho bạn"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Danh sách bài tập -->
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="16dp">
 
-            <!-- TextView cho tiêu đề thử thách -->
-            <TextView
+            <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="THỬ THÁCH 7x4"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:columnCount="3"
+                android:rowCount="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
 
-            <!-- Horizontal ScrollView chứa GridLayout -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
+                <!-- Dòng 1 -->
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Đốt cháy mỡ bụng\n14 PHÚT • Trung Bình"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"
+                    />
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Giảm mỡ (Không Nhảy)\n15 PHÚT • Trung Bình"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="HIIT ngực xệ\n13 PHÚT • Người bắt đầu"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <!-- Dòng 2 -->
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Sung mãn giường\n12 PHÚT • Trung Bình"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Bài tập cốt lõi\n14 PHÚT • Người bắt đầu"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Cắt nét V-cut\n12 PHÚT • Người bắt đầu"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+            </GridLayout>
+        </HorizontalScrollView>
+
+        <!-- Phần "Tập luyện nhanh" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tập luyện nhanh"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <GridLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:contentDescription="Danh sách các thử thách cuộn ngang"
-                android:importantForAccessibility="yes">
+                android:columnCount="3"
+                android:orientation="horizontal"
+                android:rowCount="2">
 
-                <GridLayout
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="4 phút với tabata\n4 PHÚT • Trung Bình"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="3 bài tập giảm mỡ bụng\n6 PHÚT • Người bắt đầu"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Khởi động trước khi tập luyện\n3 PHÚT"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="4 phút kinh điển\n7 PHÚT • Người bắt đầu"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="HIIT 7 phút đốt mỡ\n7 PHÚT • Người bắt đầu"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:onClick="onButtonClick"
+                    android:padding="16dp"
+                    android:text="Bài tập cơ bụng 7 phút\n7 PHÚT • Người bắt đầu"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:backgroundTint="#FFFFFF"
+                    app:strokeColor="#696969"
+                    app:strokeWidth="1dp"/>
+            </GridLayout>
+        </HorizontalScrollView>
+
+
+
+
+        <!-- Phần "Cơ thể tập trung" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cơ thể tập trung"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_gravity="center"
+            android:padding="8dp">
+
+            <!-- Ngực -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_chest" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:rowCount="2"
-                    android:columnCount="4"
-                    android:orientation="horizontal">
+                    android:text="Ngực"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
 
-                    <!-- Item 1 -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+            <!-- Cánh tay & Vai -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đốt cháy mỡ bụng với HIIT"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arm" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="14 PHÚT • Trung Bình"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cánh tay và Vai"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
 
-                    <!-- Item 2 -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+            <!-- Mông & Chân -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đốt cháy mỡ bụng với HIIT"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_leg" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="14 PHÚT • Trung Bình"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mông và Chân"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
 
-                    <!-- Item 3 -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+            <!-- Sáu múi -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/rounded_background"
+                android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đốt cháy mỡ bụng với HIIT"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_abs" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="14 PHÚT • Trung Bình"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sáu múi"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
 
-                    <!-- Item 4 -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+        </GridLayout>
+    </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đốt cháy mỡ bụng với HIIT"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="14 PHÚT • Trung Bình"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <!-- Item 5 -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đốt cháy mỡ bụng với HIIT"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="14 PHÚT • Trung Bình"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <!-- Item 6 -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đốt cháy mỡ bụng với HIIT"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="14 PHÚT • Trung Bình"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                </GridLayout>
-
-            </HorizontalScrollView>
-
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>

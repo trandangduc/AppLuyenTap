@@ -36,28 +36,6 @@ class ExerciseActivity : AppCompatActivity() {
         pauseButton = findViewById(R.id.pauseButton)
         val skipButton: Button = findViewById(R.id.skipButton)
 
-        // Cập nhật tên bài tập
-        exerciseNameTextView.text = exercise.name
-
-        // Cập nhật video hướng dẫn nếu có
-        exercise.videoRes?.let {
-            val videoUri = Uri.parse("android.resource://" + packageName + "/" + it)
-            videoView.setVideoURI(videoUri)
-            videoView.start()
-
-            // Lặp lại video khi kết thúc
-            videoView.setOnCompletionListener {
-                videoView.start()
-            }
-        }
-
-        // Bắt đầu đếm ngược nếu thời gian được cung cấp
-        if (exercise.time.contains("00:")) {
-            val timeInSeconds = exercise.time.split(":")[1].toInt()
-            remainingTimeInMillis = timeInSeconds * 1000L
-            startCountDown(remainingTimeInMillis)
-        }
-
         // Thiết lập hành động cho nút "TẠM DỪNG"
         pauseButton.setOnClickListener {
             if (isPaused) {
@@ -126,34 +104,14 @@ class ExerciseActivity : AppCompatActivity() {
     private fun restartExercise() {
         videoView.seekTo(0) // Đặt lại video về đầu
         videoView.start()
-        val initialTimeInSeconds = exercise.time.split(":")[1].toInt()
-        remainingTimeInMillis = initialTimeInSeconds * 1000L
+
+
         startCountDown(remainingTimeInMillis) // Đặt lại đếm ngược
         isPaused = false
     }
 
     private fun onFinishExercise() {
-        val exercises = listOf(
-            Exercise("Bật nhảy", "", "00:20", R.raw.ic_jump),
-            Exercise("Tập cơ bụng", "x16", "", R.raw.ic_crunch),
-            Exercise("Gập bụng chéo kiểu Nga", "x20", "", R.raw.ic_russian_twist),
-            Exercise("Leo núi", "x16", "", R.raw.ic_mountain_climber),
-            Exercise("Chạm gót chân", "x20", "", R.raw.ic_heel_touch),
-            Exercise("Nâng chân", "x16", "", R.raw.ic_leg_raise),
-            Exercise("Đo sàn", "", "00:20", R.raw.ic_plank)
-        )
 
-        val currentIndex = exercises.indexOfFirst { it.name == exercise.name }
-        val nextExercise = if (currentIndex < exercises.size - 1) exercises[currentIndex + 1] else null
-
-        val intent = Intent(this, RestActivity::class.java).apply {
-            putExtra("nextExerciseName", nextExercise?.name ?: "Hoàn thành!")
-            putExtra("nextExerciseReps", nextExercise?.reps ?: "0")
-            putExtra("nextExerciseTime", nextExercise?.time ?: "0")
-            putExtra("nextExerciseVideoRes", nextExercise?.videoRes ?: -1)
-        }
-        startActivity(intent)
-        finish()
     }
 
     override fun onDestroy() {

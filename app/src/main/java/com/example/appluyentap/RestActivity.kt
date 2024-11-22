@@ -98,10 +98,7 @@ class RestActivity : AppCompatActivity() {
         if (nextExerciseVideoRes == -1) {
             // Xử lý trường hợp không có video (nếu cần)
         }
-        val ex = Exercise(nextExerciseName, nextExerciseReps, nextExerciseTime, nextExerciseVideoRes);
-        val intent = Intent(this, ExerciseActivity::class.java).apply {
-            putExtra("exercise", ex)
-        }
+     
         startActivity(intent)
         finish() // Đóng RestActivity sau khi chuyển đi
     }

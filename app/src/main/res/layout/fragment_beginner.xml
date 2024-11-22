@@ -19,9 +19,9 @@
         <LinearLayout
             android:id="@+id/title1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_card"
+            android:background="@drawable/bg_bellybd"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -46,9 +46,9 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_card"
+            android:background="@drawable/bg_chestbd"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -70,9 +70,9 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_card"
+            android:background="@drawable/bg_armbd"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -93,9 +93,9 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_card"
+            android:background="@drawable/bg_footbd"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -116,9 +116,9 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_card"
+            android:background="@drawable/bg_strapbd"
             android:orientation="vertical"
             android:padding="16dp">
 
