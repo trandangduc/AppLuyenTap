@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "207979997209",
+    "firebase_url": "https://tapluyenonha-default-rtdb.firebaseio.com",
+    "project_id": "tapluyenonha",
+    "storage_bucket": "tapluyenonha.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207979997209:android:927cff890ee9bb0f062288",
+        "android_client_info": {
+          "package_name": "com.example.appluyentap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9FQVmZm9c1-9pO6NmbptT7P5ZicA3_G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
