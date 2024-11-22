@@ -69,9 +69,9 @@
                     <!-- Card bài tập đầu tiên -->
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/bg_card"
+                        android:background="@drawable/bg_body"
                         android:orientation="vertical"
                         android:padding="16dp">
 
@@ -102,9 +102,9 @@
                     <!-- Card bài tập thứ hai -->
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/bg_card"
+                        android:background="@drawable/bg_lower"
                         android:orientation="vertical"
                         android:padding="16dp">
 
