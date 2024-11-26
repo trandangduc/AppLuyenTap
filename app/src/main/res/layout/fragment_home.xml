@@ -10,132 +10,13 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Phần Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:orientation="horizontal"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="TẬP LUYỆN TẠI NHÀ"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="10dp"
-                android:contentDescription="Biểu tượng người dùng" />
-        </LinearLayout>
-
-        <!-- Phần Thử thách 7x4 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="THỬ THÁCH 7x4"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <!-- Horizontal ScrollView cho các thử thách -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <!-- Card bài tập đầu tiên -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/bg_body"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TOÀN THÂN THỬ THÁCH 7X4"
-                            android:textColor="@android:color/black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Bắt đầu hành trình tạo dáng cơ thể..."
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-
-                        <Button
-                            android:id="@+id/start_button1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="KHỞI ĐẦU"
-                            android:contentDescription="Bắt đầu thử thách toàn thân 7x4" />
-                    </LinearLayout>
-
-                    <!-- Card bài tập thứ hai -->
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:layout_marginEnd="16dp"
-                        android:background="@drawable/bg_lower"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="THÂN DƯỚI THỬ THÁCH 7X4"
-                            android:textColor="@android:color/black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Bắt đầu hành trình tạo dáng cơ thể..."
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-
-                        <Button
-                            android:id="@+id/start_button2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="KHỞI ĐẦU"
-                            android:contentDescription="Bắt đầu thử thách thân dưới 7x4" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-        </LinearLayout>
+        <!-- Các tab người dùng -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -170,34 +51,13 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </LinearLayout>
+
         <!-- RecyclerView cho danh sách bài tập -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <ScrollView
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Danh sách các bài tập">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp">
-                <FrameLayout
-                    android:id="@+id/main_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-            </LinearLayout>
-
-        </ScrollView>
-
+            android:layout_marginBottom="100dp" />
 
     </LinearLayout>
 

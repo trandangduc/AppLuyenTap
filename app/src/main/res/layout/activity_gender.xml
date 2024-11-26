@@ -7,39 +7,16 @@
     tools:context=".Gender">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:background="#FFFFFFFF"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <Button
-            android:id="@+id/buttonNext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
-            android:layout_weight="1"
-            android:backgroundTint="#FFFFFFFF"
-            android:text="Bỏ qua"
-            android:textColor="#040404" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
+        android:background="#FFFFFFFF"
         android:orientation="vertical"
         android:textStyle="bold"
-        android:background="#FFFFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView6"
@@ -48,11 +25,11 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
+            android:gravity="center"
             android:text="Hãy chọn giới tính của bạn"
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:textColor="#000000"
-            android:gravity="center" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
 
         <Button
@@ -67,50 +44,37 @@
             android:text="Nam"
             android:textColor="@android:color/black"
             app:strokeColor="#696969"
-            app:strokeWidth="1dp"
-            />
+            app:strokeWidth="1dp" />
 
         <Button
             android:id="@+id/buttonNu"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:backgroundTint="#FFFFFF"
             android:drawablePadding="8dp"
             android:text="Nữ"
-            app:strokeColor="#696969"
-            app:strokeWidth="1dp"
             android:textColor="@android:color/black"
-             />
+            app:strokeColor="#696969"
+            app:strokeWidth="1dp" />
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="77dp"
-        android:layout_marginStart="1dp"
+    <Button
+        android:id="@+id/button25"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="1dp"
-        android:background="#FFFFFFFF"
+
+        android:backgroundTint="#007BFF"
+        android:text="Tiếp theo"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <Button
-            android:id="@+id/button25"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="80dp"
-            android:text="Tiếp theo"
-            android:backgroundTint="#007BFF"
-            android:textColor="@android:color/white"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-
-           />
-    </LinearLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

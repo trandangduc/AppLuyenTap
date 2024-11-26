@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Tổng cài đặt"
+                android:text="Chỉnh sửa hồ sơ"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
@@ -99,38 +99,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layoutTTSSetting"
-            android:layout_width="375dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="21dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="openTTSSetting"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutGeneralSetting">
-
-            <ImageView
-                android:id="@+id/iconTTS"
-                android:layout_width="41dp"
-                android:layout_height="51dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="Tùy chọn giọng nói"
-                android:src="@drawable/baseline_mic_none_24" />
-
-            <TextView
-                android:id="@+id/textTTSSetting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Tùy chọn giọng nói (TTS)"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/layoutAssess"
             android:layout_width="375dp"
             android:layout_height="75dp"
@@ -141,7 +109,7 @@
             android:orientation="horizontal"
             android:padding="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutTTSSetting">
+            app:layout_constraintTop_toBottomOf="@+id/layoutGeneralSetting">
 
             <ImageView
                 android:id="@+id/iconFeatureSuggestion"
@@ -157,38 +125,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Đánh giá"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutFeedBack"
-            android:layout_width="375dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="20dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="openLanguageSetting"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutAssess">
-
-            <ImageView
-                android:id="@+id/iconLanguageSetting"
-                android:layout_width="43dp"
-                android:layout_height="55dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="Tùy chọn ngôn ngữ"
-                android:src="@drawable/baseline_assignment_24" />
-
-            <TextView
-                android:id="@+id/textLanguageSetting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Phản hồi"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 

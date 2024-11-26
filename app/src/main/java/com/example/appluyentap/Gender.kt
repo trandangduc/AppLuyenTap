@@ -1,25 +1,26 @@
 package com.example.appluyentap
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.graphics.Color
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class Gender : AppCompatActivity() {
 
     private lateinit var imgMale: Button
     private lateinit var imgFemale: Button
     private lateinit var btnNext: Button
-    private lateinit var btnSkip: Button
 
     private var selectedGender: String? = null
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,9 @@ class Gender : AppCompatActivity() {
         imgMale = findViewById(R.id.buttonNam)
         imgFemale = findViewById(R.id.buttonNu)
         btnNext = findViewById(R.id.button25)
-        btnSkip = findViewById(R.id.buttonNext)
+
+        // Khởi tạo tham chiếu đến Firebase Realtime Database
+        database = Firebase.database.reference
 
         // Lắng nghe WindowInsets để điều chỉnh padding cho hệ thống thanh bar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -55,20 +58,32 @@ class Gender : AppCompatActivity() {
         // Xử lý khi người dùng nhấn nút Tiếp theo
         btnNext.setOnClickListener {
             if (selectedGender != null) {
-                Toast.makeText(this, "Bạn đã chọn: $selectedGender", Toast.LENGTH_SHORT).show()
-                // Chuyển đến activity hoặc hành động tiếp theo
-                startActivity(Intent(this, Clickbody::class.java))
+                saveGenderToDatabase(selectedGender!!)
             } else {
                 Toast.makeText(this, "Vui lòng chọn một giới tính", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Xử lý khi người dùng nhấn nút Bỏ qua
-        btnSkip.setOnClickListener {
-            // Xử lý hành động bỏ qua
-            startActivity(Intent(this, Clickbody::class.java))
+    }
+
+    private fun saveGenderToDatabase(gender: String) {
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user != null) {
+            val userId = user.uid
+
+            // Lưu giới tính vào Realtime Database
+            database.child("users").child(userId).child("gender").setValue(gender)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Lưu giới tính thành công!", Toast.LENGTH_SHORT).show()
+                    // Chuyển đến trang tiếp theo
+                    startActivity(Intent(this, Goal::class.java))
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Lỗi khi lưu giới tính: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        } else {
+            Toast.makeText(this, "Không tìm thấy người dùng!", Toast.LENGTH_SHORT).show()
         }
-
-
     }
 }

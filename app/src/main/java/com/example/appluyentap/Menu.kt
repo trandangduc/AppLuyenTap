@@ -54,9 +54,13 @@ class Menu : AppCompatActivity() {
     }
 
     private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container, fragment) // Đảm bảo `main_container` là ID của FrameLayout trong XML
-            .commit()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.main_container, fragment)
+
+        // Thêm vào back stack nếu muốn quay lại
+        transaction.addToBackStack(null)
+
+        transaction.commit()
     }
 
 

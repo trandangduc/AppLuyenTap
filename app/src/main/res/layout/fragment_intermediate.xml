@@ -16,7 +16,9 @@
             android:orientation="vertical"
             android:padding="8dp">
 
+            <!-- Thêm phần tử đầu tiên -->
             <LinearLayout
+                android:id="@+id/title1"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="8dp"
@@ -29,20 +31,14 @@
                     android:layout_height="wrap_content"
                     android:text="BỤNG TRUNG BÌNH"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="29 PHÚT • 21 BÀI TẬP"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Lặp lại các LinearLayout khác với các thông tin tập luyện -->
-
             <LinearLayout
+                android:id="@+id/title2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="8dp"
@@ -55,17 +51,15 @@
                     android:layout_height="wrap_content"
                     android:text="NGỰC TRUNG BÌNH"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="15 PHÚT • 14 BÀI TẬP"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+
             </LinearLayout>
+
+            <!-- Thêm các phần tử tương tự -->
             <LinearLayout
+                android:id="@+id/title3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="8dp"
@@ -78,17 +72,15 @@
                     android:layout_height="wrap_content"
                     android:text="CÁNH TAY TRUNG BÌNH"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="26 PHÚT • 25 BÀI TẬP"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+
             </LinearLayout>
+
+            <!-- Các LinearLayout tiếp theo -->
             <LinearLayout
+                android:id="@+id/title4"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="8dp"
@@ -101,17 +93,14 @@
                     android:layout_height="wrap_content"
                     android:text="CHAN TRUNG BÌNH"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="41 PHÚT • 36 BÀI TẬP"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+
             </LinearLayout>
+
             <LinearLayout
+                android:id="@+id/title5"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="8dp"
@@ -124,17 +113,11 @@
                     android:layout_height="wrap_content"
                     android:text="VAI VÀ LƯNG TRUNG BÌNH"
                     android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="19 PHÚT • 17 BÀI TẬP"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp" />
+
             </LinearLayout>
-
 
         </LinearLayout>
     </ScrollView>

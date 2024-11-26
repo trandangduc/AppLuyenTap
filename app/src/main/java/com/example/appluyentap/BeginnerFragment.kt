@@ -26,21 +26,72 @@ class BeginnerFragment : Fragment() {
 
         // Gán sự kiện nhấn cho từng card
         view.findViewById<LinearLayout>(R.id.title1).setOnClickListener {
-            navigateToHomepage()
+            // Tạo Intent để mở ListExercise
+            val intent = Intent(requireContext(), ListExercise::class.java)
+
+            // Truyền thêm dữ liệu thông qua Intent
+            intent.putExtra("BoPhan", "Bụng") // Giá trị "Bung" cho bộ phận
+            intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
+
+            // Bắt đầu Activity ListExercise
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        // Gán sự kiện nhấn cho từng card
+        view.findViewById<LinearLayout>(R.id.title2).setOnClickListener {
+            // Tạo Intent để mở ListExercise
+            val intent = Intent(requireContext(), ListExercise::class.java)
+
+            // Truyền thêm dữ liệu thông qua Intent
+            intent.putExtra("BoPhan", "Ngực") // Giá trị "Bung" cho bộ phận
+            intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
+
+            // Bắt đầu Activity ListExercise
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        // Gán sự kiện nhấn cho từng card
+        view.findViewById<LinearLayout>(R.id.title3).setOnClickListener {
+            // Tạo Intent để mở ListExercise
+            val intent = Intent(requireContext(), ListExercise::class.java)
+
+            // Truyền thêm dữ liệu thông qua Intent
+            intent.putExtra("BoPhan", "Cánh Tay") // Giá trị "Bung" cho bộ phận
+            intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
+
+            // Bắt đầu Activity ListExercise
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        // Gán sự kiện nhấn cho từng card
+        view.findViewById<LinearLayout>(R.id.title4).setOnClickListener {
+            // Tạo Intent để mở ListExercise
+            val intent = Intent(requireContext(), ListExercise::class.java)
+
+            // Truyền thêm dữ liệu thông qua Intent
+            intent.putExtra("BoPhan", "Chân") // Giá trị "Bung" cho bộ phận
+            intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
+
+            // Bắt đầu Activity ListExercise
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        // Gán sự kiện nhấn cho từng card
+        view.findViewById<LinearLayout>(R.id.title5).setOnClickListener {
+            // Tạo Intent để mở ListExercise
+            val intent = Intent(requireContext(), ListExercise::class.java)
+
+            // Truyền thêm dữ liệu thông qua Intent
+            intent.putExtra("BoPhan", "Vai và Lưng") // Giá trị "Bung" cho bộ phận
+            intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
+
+            // Bắt đầu Activity ListExercise
+            startActivity(intent)
+            requireActivity().finish()
         }
         }
 
-    private fun navigateToHomepage() {
-        // Tạo Intent để mở ListExercise
-        val intent = Intent(requireContext(), ListExercise::class.java)
 
-        // Truyền thêm dữ liệu thông qua Intent
-        intent.putExtra("BoPhan", "Bụng") // Giá trị "Bung" cho bộ phận
-        intent.putExtra("MucDo", "Dễ")   // Giá trị "De" cho mức độ
-
-        // Bắt đầu Activity ListExercise
-        startActivity(intent)
-    }
 
     companion object {
         @JvmStatic

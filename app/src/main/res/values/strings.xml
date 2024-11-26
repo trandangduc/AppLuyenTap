@@ -6,4 +6,9 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">207979997209-unh74db4hesbdnifa6nmqs6o0q0pqob4.apps.googleusercontent.com</string>
+    <string-array name="goal_array">
+        <item>Giảm cân</item>
+        <item>Tăng cân</item>
+    </string-array>
 </resources>

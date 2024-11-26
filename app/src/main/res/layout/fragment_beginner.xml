@@ -9,135 +9,142 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="8dp">
-
-        <!-- Card bài tập đầu tiên -->
-        <LinearLayout
-            android:id="@+id/title1"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_bellybd"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/titleTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BỤNG NGƯỜI BẮT ĐẦU"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/descriptionTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="20 PHÚT • 16 BÀI TẬP"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-
-
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_chestbd"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NGỰC NGƯỜI BẮT ĐẦU"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+            <!-- Card bài tập đầu tiên -->
+            <LinearLayout
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_bellybd"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:translationZ="2dp"
+                android:clipToOutline="true"
+                android:radius="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="15 PHÚT • 10 BÀI TẬP"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/titleTextView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BỤNG NGƯỜI BẮT ĐẦU"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium" />
+
+
+            </LinearLayout>
+
+            <!-- Card bài tập thứ hai -->
+            <LinearLayout
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_chestbd"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:translationZ="2dp"
+                android:clipToOutline="true"
+                android:radius="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NGỰC NGƯỜI BẮT ĐẦU"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium" />
+
+
+            </LinearLayout>
+
+            <!-- Card bài tập thứ ba -->
+            <LinearLayout
+                android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_armbd"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:translationZ="2dp"
+                android:clipToOutline="true"
+                android:radius="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CÁNH TAY  NGƯỜI BẮT ĐẦU"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+
+            <!-- Card bài tập thứ tư -->
+            <LinearLayout
+                android:id="@+id/title4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_footbd"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:translationZ="2dp"
+                android:clipToOutline="true"
+                android:radius="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHÂN NGƯỜI BẮT ĐẦU"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium" />
+
+
+            </LinearLayout>
+
+            <!-- Card bài tập thứ năm -->
+            <LinearLayout
+                android:id="@+id/title5"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_strapbd"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_gravity="center"
+                android:elevation="4dp"
+                android:translationZ="2dp"
+                android:clipToOutline="true"
+                android:radius="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VAI VÀ LƯNG NGƯỜI BẮT ĐẦU"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-medium" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_armbd"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CÁNH TAY  NGƯỜI BẮT ĐẦU"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="11 PHÚT • 19 BÀI TẬP"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_footbd"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CHÂN NGƯỜI BẮT ĐẦU"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="26 PHÚT • 23 BÀI TẬP"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/bg_strapbd"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="VAI VÀ LƯNG NGƯỜI BẮT ĐẦU"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="17 PHÚT • 17 BÀI TẬP"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-    </LinearLayout>
     </ScrollView>
 </FrameLayout>

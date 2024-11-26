@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Thay đổi màu nền khi nút được nhấn -->
+    <item android:state_pressed="true" android:drawable="@drawable/button_pressed" />
+
+    <!-- Màu nền khi nút bình thường -->
+    <item android:drawable="@drawable/button_normal" />
+</selector>

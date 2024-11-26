@@ -11,14 +11,13 @@
     <VideoView
         android:id="@+id/videoView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="400dp"
         android:contentDescription="Video hướng dẫn"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/textContainer"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_weight="2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="2" /> <!-- Thêm khoảng cách dưới VideoView -->
 
     <!-- LinearLayout chứa các TextView ở dưới -->
     <LinearLayout
@@ -31,49 +30,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_weight="1">
+        app:layout_constraintVertical_weight="1"
+        android:padding="16dp"> <!-- Thêm padding xung quanh LinearLayout -->
 
         <!-- Button tạm dừng -->
         <Button
             android:id="@+id/pauseButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TẠM DỪNG"
-            app:strokeColor="#696969"
-            app:strokeWidth="1dp"
-            android:textSize="24sp"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
             android:backgroundTint="#007BFF"
+            android:elevation="4dp"
+            android:text="TẠM DỪNG"
             android:textColor="@android:color/white"
-            android:paddingBottom="20dp"
-            />
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" /> <!-- Thêm hiệu ứng bóng cho nút -->
+
+        <!-- Button Hoàn thành -->
+        <Button
+            android:id="@+id/skipButton"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#28a745"
+            android:text="Hoàn thành"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
         <!-- TextView hiển thị tên bài tập -->
         <TextView
             android:id="@+id/exerciseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Tên bài tập"
             android:textSize="24sp"
             android:textColor="@android:color/black"
-            android:paddingBottom="20dp" />
+            android:layout_marginBottom="16dp"
+            android:textStyle="bold" /> <!-- Thêm kiểu chữ đậm cho tên bài tập -->
 
         <!-- TextView hiển thị thời gian đếm ngược -->
         <TextView
             android:id="@+id/timerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="48sp"
-            android:textColor="@android:color/holo_blue_dark"
-            android:paddingTop="20dp" />
+            android:text="00:00"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" /> <!-- Thêm khoảng cách trên -->
+
     </LinearLayout>
 
-    <!-- Nút "Bỏ qua" ở góc phải dưới màn hình -->
-    <Button
-        android:id="@+id/skipButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bỏ qua"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

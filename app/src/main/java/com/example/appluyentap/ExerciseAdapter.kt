@@ -1,7 +1,8 @@
 package com.example.appluyentap
 
+import android.content.Context
+import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,86 +14,83 @@ import data.Initiate
 import data.Stretching
 
 class ExerciseAdapter(
+    private val context: Context,
     private val mainExercises: List<Exercise>,
     private val stretchingExercises: List<Stretching>,
     private val warmupExercises: List<Initiate>
 ) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
 
-    // Kết hợp tất cả các bài tập thành một danh sách duy nhất
-    private val allExercises = mutableListOf<Any>().apply {
-        addAll(mainExercises)
-        addAll(stretchingExercises)
-        addAll(warmupExercises)
-    }
-
-    class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTextView: TextView = itemView.findViewById(R.id.exerciseName)
-        val repsTextView: TextView = itemView.findViewById(R.id.exerciseReps)
-        val videoView: VideoView = itemView.findViewById(R.id.exerciseVideo)
-
-        // Hàm dừng phát video
-        fun stopVideo() {
-            if (videoView.isPlaying) {
-                videoView.stopPlayback()
-            }
-        }
+    inner class ExerciseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val exerciseName: TextView = itemView.findViewById(R.id.exerciseName)
+        val exerciseVideo: VideoView = itemView.findViewById(R.id.exerciseVideo)
+        val exerciseDetails: TextView = itemView.findViewById(R.id.exerciseReps) // TextView for repetitions or duration
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.exercise_item, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.exercise_item, parent, false)
         return ExerciseViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
-        val exercise = allExercises[position]
+        // Determine which list the exercise belongs to, in the order: Warmup, Main exercises, Stretching
+        val exercise: Any = when {
+            position < warmupExercises.size -> warmupExercises[position] // Warmup exercises
+            position < warmupExercises.size + mainExercises.size -> mainExercises[position - warmupExercises.size] // Main exercises
+            else -> stretchingExercises[position - warmupExercises.size - mainExercises.size] // Stretching exercises
+        }
 
-        // Xử lý hiển thị tên bài tập và số rep/thời gian dựa trên kiểu dữ liệu
+        // Set exercise name
         when (exercise) {
-            is Exercise -> {
-                holder.nameTextView.text = exercise.TenBaiTap
-                holder.repsTextView.text = exercise.SoRep.toString()
-                setVideo(holder, exercise.Video)
+            is Exercise -> holder.exerciseName.text = exercise.TenBaiTap
+            is Stretching -> holder.exerciseName.text = exercise.TenBaiTap
+            is Initiate -> holder.exerciseName.text = exercise.TenBaiTap
+        }
+
+        // Get video name from the exercise object (assuming Video field contains the file name in raw)
+        val videoName: String? = when (exercise) {
+            is Exercise -> exercise.Video
+            is Stretching -> exercise.Video
+            is Initiate -> exercise.Video
+            else -> null
+        }
+
+        // If video name exists, load it from raw resource
+        videoName?.let {
+            val resId = context.resources.getIdentifier(it, "raw", context.packageName)
+            if (resId != 0) {  // If the resource exists
+                holder.exerciseVideo.setVideoURI(Uri.parse("android.resource://${context.packageName}/$resId"))
+                holder.exerciseVideo.setOnPreparedListener {
+                    holder.exerciseVideo.start() // Start video automatically
+                }
             }
-            is Initiate -> {
-                holder.nameTextView.text = exercise.TenBaiTap
-                holder.repsTextView.text = "${exercise.ThoiGian} giây"
-                setVideo(holder, exercise.Video)
+        }
+
+        // Display repetitions for main exercises or duration for stretching and warmup exercises
+        val detailsText: String = when (exercise) {
+            is Exercise -> "x ${exercise.SoRep} cái" // For main exercises, show repetitions
+            is Stretching -> "${exercise.ThoiGian} giây" // For stretching exercises, show time duration
+            is Initiate -> "${exercise.ThoiGian} giây" // For warmup exercises, show time duration
+            else -> ""
+        }
+
+        holder.exerciseDetails.text = detailsText
+
+        // Set onClickListener to navigate to ExerciseActivity
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ExerciseActivity::class.java)
+            val exerciseId = when (exercise) {
+                is Exercise -> exercise.ID
+                is Stretching -> exercise.ID
+                is Initiate -> exercise.ID
+                else -> -1
             }
-            is Stretching -> {
-                holder.nameTextView.text = exercise.TenBaiTap
-                holder.repsTextView.text = "${exercise.ThoiGian} giây"
-                setVideo(holder, exercise.Video)
-            }
+            intent.putExtra("ExerciseID", exerciseId)
+            context.startActivity(intent)
         }
     }
 
-    override fun getItemCount() = allExercises.size
-
-    // Dừng video khi ViewHolder bị tái chế
-    override fun onViewRecycled(holder: ExerciseViewHolder) {
-        super.onViewRecycled(holder)
-        holder.stopVideo()
-    }
-
-    // Hàm thiết lập video cho VideoView
-    private fun setVideo(holder: ExerciseViewHolder, videoUrl: String?) {
-        // Kiểm tra videoUrl hợp lệ
-        if (!videoUrl.isNullOrEmpty()) {
-            val videoUri = Uri.parse(videoUrl)
-            holder.videoView.setVideoURI(videoUri)
-            holder.videoView.setOnPreparedListener { mediaPlayer ->
-                mediaPlayer.isLooping = true // Video lặp lại
-                holder.videoView.start() // Bắt đầu phát video
-            }
-            holder.videoView.setOnErrorListener { mp, what, extra ->
-                // Xử lý lỗi video nếu không thể phát
-                Log.e("ExerciseAdapter", "Error playing video: $what, $extra")
-                true // Đánh dấu lỗi đã được xử lý
-            }
-        } else {
-            // Nếu không có video, ẩn VideoView
-            holder.videoView.visibility = View.GONE
-        }
+    override fun getItemCount(): Int {
+        return warmupExercises.size + mainExercises.size + stretchingExercises.size
     }
 }
-

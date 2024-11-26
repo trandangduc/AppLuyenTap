@@ -1,278 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- TextView "Cơ thể tập trung" -->
+    <TextView
+        android:id="@+id/bodyFocusText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:text="Cơ thể tập trung"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
-        <!-- Tiêu đề -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chọn cho bạn"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Danh sách bài tập -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <!-- Các nút trên cùng một dòng -->
-                <Button
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Đốt cháy mỡ bụng\n14 PHÚT • Trung Bình"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <Button
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Giảm mỡ (Không Nhảy)\n15 PHÚT • Trung Bình"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <Button
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="HIIT ngực xệ\n13 PHÚT • Người bắt đầu"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <Button
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Sung mãn giường\n12 PHÚT • Trung Bình"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <Button
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Bài tập cốt lõi\n14 PHÚT • Người bắt đầu"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <Button
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Cắt nét V-cut\n12 PHÚT • Người bắt đầu"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-
-        <!-- Phần "Tập luyện nhanh" -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tập luyện nhanh"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <!-- Nút 1 -->
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="4 phút với tabata\n4 PHÚT • Trung Bình"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <!-- Nút 2 -->
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="3 bài tập giảm mỡ bụng\n6 PHÚT • Người bắt đầu"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <!-- Nút 3 -->
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Khởi động trước khi tập luyện\n3 PHÚT"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <!-- Nút 4 -->
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:gravity="start"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="4 phút kinh điển\n7 PHÚT • Người bắt đầu"
-                    android:textAlignment="viewStart"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <!-- Nút 5 -->
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:gravity="start"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="HIIT 7 phút đốt mỡ\n7 PHÚT • Người bắt đầu"
-                    android:textAlignment="viewStart"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-                <!-- Nút 6 -->
-                <Button
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:onClick="onButtonClick"
-                    android:padding="16dp"
-                    android:text="Bài tập cơ bụng 7 phút\n7 PHÚT • Người bắt đầu"
-                    android:textAlignment="viewStart"
-                    android:textColor="@android:color/black"
-                    android:textSize="10sp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-                    android:backgroundTint="#FFFFFF"
-                    app:strokeColor="#696969"
-                    app:strokeWidth="1dp" />
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-
-
-
-
-        <!-- Phần "Cơ thể tập trung" -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cơ thể tập trung"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="2"
-            android:layout_gravity="center"
-            android:padding="8dp">
-
+    <!-- GridLayout -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/bodyFocusText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView">
             <!-- Ngực -->
             <LinearLayout
+                android:id="@+id/chestLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:gravity="center"
                 android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:orientation="vertical"
                 android:padding="16dp">
 
                 <ImageView
@@ -283,21 +52,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Ngực"
-                    android:textSize="14sp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="8dp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Cánh tay & Vai -->
+
             <LinearLayout
+                android:id="@+id/CanhtayvaVaiLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:gravity="center"
                 android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:orientation="vertical"
                 android:padding="16dp">
 
                 <ImageView
@@ -308,21 +78,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Cánh tay và Vai"
-                    android:textSize="14sp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="8dp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Mông & Chân -->
             <LinearLayout
+                android:id="@+id/mongvachanLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:gravity="center"
                 android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:orientation="vertical"
                 android:padding="16dp">
 
                 <ImageView
@@ -333,21 +104,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Mông và Chân"
-                    android:textSize="14sp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="8dp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <!-- Sáu múi -->
             <LinearLayout
+                android:id="@+id/saumuiLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:gravity="center"
                 android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:orientation="vertical"
                 android:padding="16dp">
 
                 <ImageView
@@ -358,13 +130,24 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="Sáu múi"
-                    android:textSize="14sp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="8dp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-        </GridLayout>
-    </LinearLayout>
+            <!-- Các phần còn lại của GridLayout -->
 
-</ScrollView>
+        </GridLayout>
+    <!-- RecyclerView ở cuối cùng -->
+    <!-- RecyclerView ở dưới cùng -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/gridLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

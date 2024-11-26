@@ -1,5 +1,7 @@
 package data
 
+import java.io.Serializable
+
 
 data class Exercise(
     var ID: Int = 0,
@@ -9,4 +11,4 @@ data class Exercise(
     val TenBaiTap: String= "",
     val Video: String?
 
-)
+) : Serializable

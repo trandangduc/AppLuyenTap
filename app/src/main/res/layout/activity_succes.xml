@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimary"
+    android:padding="20dp">
+
+    <!-- Chúc mừng người dùng -->
+    <TextView
+        android:id="@+id/tvCongratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"
+        android:animation="@anim/fade_in"
+        android:text="Chúc mừng!"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Thời gian tập luyện -->
+    <TextView
+        android:id="@+id/tvWorkoutTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thời gian tập: 0 phút"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Hiệu ứng vui vẻ -->
+    <ImageView
+        android:id="@+id/ivConfetti"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_confidence"
+        android:layout_marginBottom="50dp"/>
+
+    <!-- Nút Trở về -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trở về"
+        android:textColor="#ffffff"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

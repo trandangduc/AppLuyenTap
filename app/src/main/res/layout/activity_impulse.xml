@@ -65,19 +65,20 @@
 
         <Button
             android:id="@+id/btn_confidence"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:backgroundTint="#FFFFFF"
+            android:text="Cảm thấy tự tin "
+            android:textColor="@android:color/black"
+            app:icon="@drawable/ic_confidence"
+            app:iconTint="@color/colorBlack"
             app:strokeColor="#696969"
             app:strokeWidth="1dp"
-            app:icon="@drawable/ic_confidence"
-            app:tint="#000000"
-            android:text="Cảm thấy tự tin "
-            android:textColor="@android:color/black" />
+            app:tint="#000000" />
 
         <Button
             android:id="@+id/btn_relax"

@@ -63,21 +63,8 @@ class HomeFragment : Fragment() {
         parentFragmentManager.beginTransaction()
             .replace(fragmentManager.id, beginnerFragment) // Sử dụng fragmentContainer.id thay cho R.id.fragment_container
             .commit()
-        // Handle start button click events for the two challenges
-        val startButton1: Button = view.findViewById(R.id.start_button1)
-        val startButton2: Button = view.findViewById(R.id.start_button2)
 
-        startButton1.setOnClickListener {
-            val intent = Intent(requireContext(), ExerciseActivity::class.java)
-            intent.putExtra("challenge", "TOÀN THÂN THỬ THÁCH 7X4")
-            startActivity(intent)
-        }
 
-        startButton2.setOnClickListener {
-            val intent = Intent(requireContext(), ExerciseActivity::class.java)
-            intent.putExtra("challenge", "THÂN DƯỚI THỬ THÁCH 7X4")
-            startActivity(intent)
-        }
 
 
     }

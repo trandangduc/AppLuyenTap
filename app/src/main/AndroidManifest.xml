@@ -13,8 +13,30 @@
         android:theme="@style/Theme.AppLuyenTap"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChallengeUpActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Succes"
+            android:exported="false" />
+        <activity
             android:name=".ListExercise"
             android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".RestActivity"
             android:exported="true" />
@@ -45,6 +67,8 @@
         <activity android:name=".WorkoutSetting" />
         <activity android:name=".GeneralSetting" />
         <activity android:name=".Setting" />
+        <activity android:name=".Goal" />
+        <activity android:name=".Assess"/>
     </application>
 
 </manifest>

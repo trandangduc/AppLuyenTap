@@ -32,12 +32,7 @@ class SettingFragment : Fragment() {
         }
 
         rootView.findViewById<LinearLayout>(R.id.layoutGeneralSetting).setOnClickListener {
-            val intent = Intent(requireContext(), GeneralSetting::class.java)
-            startActivity(intent)
-        }
-
-        rootView.findViewById<LinearLayout>(R.id.layoutTTSSetting).setOnClickListener {
-            val intent = Intent(requireContext(), FeedBack::class.java)
+            val intent = Intent(requireContext(), ProfileActivity::class.java)
             startActivity(intent)
         }
 
