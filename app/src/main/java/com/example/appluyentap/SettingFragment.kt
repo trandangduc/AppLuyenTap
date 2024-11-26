@@ -25,11 +25,6 @@ class SettingFragment : Fragment() {
             insets
         }
 
-        // Thiết lập sự kiện click cho các LinearLayout
-        rootView.findViewById<LinearLayout>(R.id.layoutWorkoutSetting).setOnClickListener {
-            val intent = Intent(requireContext(), WorkoutSetting::class.java)
-            startActivity(intent)
-        }
 
         rootView.findViewById<LinearLayout>(R.id.layoutGeneralSetting).setOnClickListener {
             val intent = Intent(requireContext(), ProfileActivity::class.java)

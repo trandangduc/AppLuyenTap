@@ -38,7 +38,7 @@
             android:layout_width="375dp"
             android:layout_height="75dp"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="124dp"
+            android:layout_marginTop="20dp"
             android:background="?android:attr/selectableItemBackground"
             android:onClick="openGenderSetting"
             android:orientation="horizontal"
@@ -63,38 +63,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutWorkoutSetting"
-            android:layout_width="375dp"
-            android:layout_height="75dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="32dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="openGeneralSetting"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView1">
-
-            <ImageView
-                android:id="@+id/iconGeneralSetting"
-                android:layout_width="43dp"
-                android:layout_height="49dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="Tổng cài đặt"
-                android:src="@drawable/baseline_settings_24" />
-
-            <TextView
-                android:id="@+id/textWorkoutSetting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Cài đặt tập luyện"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
 
         </LinearLayout>
 
