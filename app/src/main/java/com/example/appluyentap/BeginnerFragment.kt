@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 
 class BeginnerFragment : Fragment() {
@@ -25,7 +26,7 @@ class BeginnerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Gán sự kiện nhấn cho từng card
-        view.findViewById<LinearLayout>(R.id.title1).setOnClickListener {
+        view.findViewById<CardView>(R.id.title1).setOnClickListener {
             // Tạo Intent để mở ListExercise
             val intent = Intent(requireContext(), ListExercise::class.java)
 
@@ -38,7 +39,7 @@ class BeginnerFragment : Fragment() {
             requireActivity().finish()
         }
         // Gán sự kiện nhấn cho từng card
-        view.findViewById<LinearLayout>(R.id.title2).setOnClickListener {
+        view.findViewById<CardView>(R.id.title2).setOnClickListener {
             // Tạo Intent để mở ListExercise
             val intent = Intent(requireContext(), ListExercise::class.java)
 
@@ -51,7 +52,7 @@ class BeginnerFragment : Fragment() {
             requireActivity().finish()
         }
         // Gán sự kiện nhấn cho từng card
-        view.findViewById<LinearLayout>(R.id.title3).setOnClickListener {
+        view.findViewById<CardView>(R.id.title3).setOnClickListener {
             // Tạo Intent để mở ListExercise
             val intent = Intent(requireContext(), ListExercise::class.java)
 
@@ -64,7 +65,7 @@ class BeginnerFragment : Fragment() {
             requireActivity().finish()
         }
         // Gán sự kiện nhấn cho từng card
-        view.findViewById<LinearLayout>(R.id.title4).setOnClickListener {
+        view.findViewById<CardView>(R.id.title4).setOnClickListener {
             // Tạo Intent để mở ListExercise
             val intent = Intent(requireContext(), ListExercise::class.java)
 
@@ -77,7 +78,7 @@ class BeginnerFragment : Fragment() {
             requireActivity().finish()
         }
         // Gán sự kiện nhấn cho từng card
-        view.findViewById<LinearLayout>(R.id.title5).setOnClickListener {
+        view.findViewById<CardView>(R.id.title5).setOnClickListener {
             // Tạo Intent để mở ListExercise
             val intent = Intent(requireContext(), ListExercise::class.java)
 

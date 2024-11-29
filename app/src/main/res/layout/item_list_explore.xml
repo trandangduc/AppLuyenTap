@@ -2,22 +2,32 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="wrap_content"
+    android:padding="16dp">
 
     <Button
         android:id="@+id/btnkhampha"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="onButtonClick"
-        android:padding="16dp"
-        android:text="4 phút với tabata\n4 PHÚT • Trung Bình"
-        android:textColor="@android:color/black"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#696969"
-        app:strokeWidth="1dp" />
+        android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:backgroundTint="@android:color/white"
+    android:onClick="onButtonClick"
+    android:padding="16dp"
+    android:text="4 phút với Tabata\n4 PHÚT • Trung Bình"
+    android:textColor="@android:color/black"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:strokeColor="#696969"
+    app:strokeWidth="2dp"
+    app:cornerRadius="12dp"
+    app:contentPadding="16dp"
+    android:elevation="4dp"
+ />  <!-- Padding giữa icon và chữ -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,39 +33,53 @@ class HomeFragment : Fragment() {
         val intermediateTab: TextView = view.findViewById(R.id.intermediate_tab)
         val advancedTab: TextView = view.findViewById(R.id.advanced_tab)
         val fragmentManager : FragmentContainerView = view.findViewById(R.id.fragment_container)
+        val tabs = listOf(beginnerTab, intermediateTab, advancedTab)
 
+        // Hàm reset màu mặc định cho tất cả các tab
+        fun resetTabStyles() {
+            tabs.forEach { tab ->
+                tab.setBackgroundResource(R.drawable.tab_background) // Background mặc định
+                tab.setTextColor(resources.getColor(R.color.tabTextColor)) // Màu chữ mặc định
+            }
+        }
+
+        // Xử lý sự kiện khi click vào các tab
         beginnerTab.setOnClickListener {
-            val beginnerFragment = BeginnerFragment()
+            resetTabStyles()
+            selectTab(beginnerTab)
             parentFragmentManager.beginTransaction()
-                .replace(fragmentManager.id, beginnerFragment) // Sử dụng fragmentContainer.id thay cho R.id.fragment_container
+                .replace(fragmentManager.id, BeginnerFragment())
                 .commit()
             Toast.makeText(requireContext(), "Người bắt đầu được chọn", Toast.LENGTH_SHORT).show()
         }
 
         intermediateTab.setOnClickListener {
-            val beginnerFragment = IntermediateFragment()
+            resetTabStyles()
+            selectTab(intermediateTab)
             parentFragmentManager.beginTransaction()
-                .replace(fragmentManager.id, beginnerFragment) // Sử dụng fragmentContainer.id thay cho R.id.fragment_container
+                .replace(fragmentManager.id, IntermediateFragment())
                 .commit()
             Toast.makeText(requireContext(), "Trung bình được chọn", Toast.LENGTH_SHORT).show()
         }
 
         advancedTab.setOnClickListener {
-            val beginnerFragment = AdvancedFragment()
+            resetTabStyles()
+            selectTab(advancedTab)
             parentFragmentManager.beginTransaction()
-                .replace(fragmentManager.id, beginnerFragment) // Sử dụng fragmentContainer.id thay cho R.id.fragment_container
+                .replace(fragmentManager.id, AdvancedFragment())
                 .commit()
             Toast.makeText(requireContext(), "Nâng cao được chọn", Toast.LENGTH_SHORT).show()
         }
 
-        // Gọi fragment khác
-        val beginnerFragment = BeginnerFragment()
+        // Gọi mặc định "Người bắt đầu"
+        resetTabStyles()
+        selectTab(beginnerTab)
         parentFragmentManager.beginTransaction()
-            .replace(fragmentManager.id, beginnerFragment) // Sử dụng fragmentContainer.id thay cho R.id.fragment_container
+            .replace(fragmentManager.id, BeginnerFragment())
             .commit()
-
-
-
-
+    }
+    private fun selectTab(tab: TextView) {
+        tab.setBackgroundResource(R.drawable.tab_selector) // Background được chọn
+        tab.setTextColor(resources.getColor(android.R.color.black)) // Màu chữ trắng
     }
 }

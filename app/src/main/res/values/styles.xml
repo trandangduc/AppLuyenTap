@@ -1,0 +1,14 @@
+<resources>
+    <!-- Style cho nút quay lại -->
+    <style name="BackButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>  <!-- Nền trong suốt -->
+        <item name="android:elevation">4dp</item>  <!-- Bóng đổ -->
+        <item name="android:padding">8dp</item>  <!-- Padding cho nút -->
+        <item name="android:drawableLeft">@drawable/icon_back</item> <!-- Biểu tượng mũi tên -->
+        <item name="android:drawableTint">@android:color/white</item> <!-- Màu icon trắng -->
+        <item name="android:textColor">@android:color/white</item>  <!-- Màu chữ trắng -->
+        <item name="android:textSize">14sp</item>  <!-- Kích thước chữ nhỏ hơn -->
+    </style>
+</resources>

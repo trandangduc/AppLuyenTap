@@ -76,18 +76,7 @@ class ExerciseAdapter(
 
         holder.exerciseDetails.text = detailsText
 
-        // Set onClickListener to navigate to ExerciseActivity
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, ExerciseActivity::class.java)
-            val exerciseId = when (exercise) {
-                is Exercise -> exercise.ID
-                is Stretching -> exercise.ID
-                is Initiate -> exercise.ID
-                else -> -1
-            }
-            intent.putExtra("ExerciseID", exerciseId)
-            context.startActivity(intent)
-        }
+
     }
 
     override fun getItemCount(): Int {

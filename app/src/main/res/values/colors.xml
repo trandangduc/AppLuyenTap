@@ -8,6 +8,12 @@
         <color name="colorPressed">#007BFF</color> <!-- Màu khi nhấn -->
         <color name="colorDefault">#FFFFFF</color> <!-- Màu mặc định -->
         <color name="colorBlack">#000000</color>
+        <color name="primaryColor">#3A7AFE</color>
+        <color name="secondaryColor">#90CAF9</color>
+        <color name="backgroundColor">#3A7AFE</color> <!-- Màu nền tổng thể -->
+        <color name="tabBackgroundColor">#90CAF9</color> <!-- Màu nền nhạt của tab -->
+        <color name="tabTextColor">#FFFFFF</color> <!-- Màu chữ tab -->
+        <color name="tabBorderColor">#FFFFFF</color> <!-- Màu viền bao quanh tab -->
 
 
 

@@ -3,44 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="#F5F5F5">
 
-
-
-    <!-- FrameLayout để chứa ImageView và TextView chồng lên nhau -->
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
-        <!-- Nút quay lại với biểu tượng mũi tên -->
-        <Button
+        android:layout_height="100dp">
+
+        <!-- Thay Button bằng ImageButton -->
+        <ImageButton
             android:id="@+id/backButton"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_gravity="start"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/material_on_primary_disabled"
-
-            android:elevation="4dp"
-            android:padding="8dp"
-            android:text="Trở về"
-
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Back Button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_back" />
 
         <!-- Hình ảnh nền -->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/your_image"
+            android:alpha="0.6"
+            android:contentDescription="Background Image"
             android:scaleType="centerCrop"
-            android:contentDescription="Background Image" />
+            android:src="@drawable/your_image" />
 
-
-
-    </FrameLayout>
+    </RelativeLayout>
 
     <!-- RecyclerView để hiển thị danh sách bài tập -->
     <androidx.recyclerview.widget.RecyclerView
@@ -49,17 +43,21 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="16dp"
-        android:padding="8dp" />
+    />
 
     <!-- Nút bắt đầu bài tập -->
     <Button
         android:id="@+id/startButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Khởi đầu"
-        android:backgroundTint="#0000FF"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:padding="12dp" /> <!-- Biểu tượng nút play -->
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="#FF5722"
+        android:elevation="6dp"
+        android:text="Khởi đầu"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" /> <!-- Thêm hiệu ứng bo góc -->
+
 </LinearLayout>

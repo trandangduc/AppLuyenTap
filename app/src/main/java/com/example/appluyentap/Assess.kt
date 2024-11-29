@@ -40,6 +40,7 @@ class Assess : AppCompatActivity() {
                                 // Người dùng đã đánh giá trước đó, cập nhật đánh giá
                                 userRatingRef.child("rating").setValue(rating)
                                 userRatingRef.child("timestamp").setValue(System.currentTimeMillis())
+                                userRatingRef.child("id").setValue(userId)
                                     .addOnSuccessListener {
                                         Toast.makeText(this@Assess, "Đánh giá đã được cập nhật!", Toast.LENGTH_SHORT).show()
                                     }
@@ -73,5 +74,5 @@ class Assess : AppCompatActivity() {
     }
 
     // Định nghĩa dữ liệu đánh giá
-    data class Rating(val rating: Float, val timestamp: Long)
+    data class Rating(val rating: Float, val timestamp: Long, val id : String? = null)
 }

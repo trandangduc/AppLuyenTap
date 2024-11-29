@@ -2,10 +2,9 @@ package com.example.appluyentap
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.appluyentap.Menu
-import com.example.appluyentap.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -13,11 +12,12 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.bumptech.glide.Glide;
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +39,17 @@ class MainActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id)) // Web client ID của bạn
             .requestEmail()
             .build()
+
+        // Lấy tham chiếu tới ImageView
+        val imageView = findViewById<ImageView>(R.id.imageView)
+
+
+// Sử dụng Glide để tải ảnh và giảm kích thước
+        Glide.with(this)
+            .load(R.drawable.bg) // Đường dẫn tới ảnh trong tài nguyên
+            .override(800, 800) // Giảm kích thước ảnh về 800x800 (có thể thay đổi theo nhu cầu)
+            .centerCrop() // Cắt ảnh để phù hợp với kích thước ImageView
+            .into(imageView) // Tải vào ImageView
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -11,38 +12,32 @@
         android:layout_height="wrap_content"
         tools:context=".Setting">
 
-        <!-- Mục "Cài đặt tập luyện" -->
-
-        <!-- Mục "Tổng cài đặt" -->
-
-        <!-- Mục "Tùy chọn giọng nói (TTS)" -->
-
-        <!-- Mục "Đề xuất các tính năng khác" -->
-
-        <!-- Mục "Tùy chọn ngôn ngữ" -->
-
+        <!-- Tiêu đề cài đặt -->
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="142dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="CÀI ĐẶT"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="28dp"/>
 
+        <!-- Cài đặt giới tính -->
         <LinearLayout
             android:id="@+id/layoutGeneralSetting"
-            android:layout_width="375dp"
+            android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="openGenderSetting"
+            android:background="@drawable/rounded_background"
             android:orientation="horizontal"
             android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="openGenderSetting"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView1">
 
@@ -52,7 +47,7 @@
                 android:layout_height="52dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Giới tính"
-                android:src="@drawable/baseline_person_24" />
+                android:src="@drawable/baseline_person_24"/>
 
             <TextView
                 android:id="@+id/textGenderSetting"
@@ -60,22 +55,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Chỉnh sửa hồ sơ"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
+                android:textColor="#212121"
+                android:textSize="16sp"/>
 
         </LinearLayout>
 
+        <!-- Đề xuất tính năng -->
         <LinearLayout
             android:id="@+id/layoutAssess"
-            android:layout_width="375dp"
+            android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:onClick="openFeatureSuggestion"
+            android:background="@drawable/rounded_background"
             android:orientation="horizontal"
             android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="openFeatureSuggestion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layoutGeneralSetting">
 
@@ -85,7 +81,7 @@
                 android:layout_height="49dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="Đề xuất các tính năng khác"
-                android:src="@drawable/baseline_star_24" />
+                android:src="@drawable/baseline_star_24"/>
 
             <TextView
                 android:id="@+id/textFeatureSuggestion"
@@ -93,12 +89,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Đánh giá"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="#212121"
+                android:textSize="16sp"/>
 
         </LinearLayout>
 
-        <!-- Mục "Đồng bộ với Health Connect" -->
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

@@ -3,9 +3,8 @@ package com.example.appluyentap
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
-import android.widget.ProgressBar
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -72,12 +71,14 @@ class ListExercise : AppCompatActivity() {
                 }
             }
         }
-        val backbtn : Button = findViewById(R.id.backButton)
+        val backbtn : ImageButton = findViewById(R.id.backButton)
         backbtn.setOnClickListener {
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
         if (bophankhampha != "") {
+            exerciseAdapter = ExerciseAdapter(this,mainExercises, stretchingExercises, warmupExercises)
+            recyclerView.adapter = exerciseAdapter
             fetchExercisesKhamPha()
         }
         else if (khampha != 0) {

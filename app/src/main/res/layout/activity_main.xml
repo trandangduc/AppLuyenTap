@@ -1,62 +1,48 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A8D5E2"> <!-- Màu nền xanh nhạt -->
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <!-- ImageView nằm trên cùng -->
+
     <ImageView
-        android:id="@+id/topImage"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_height="400dp"
+        android:layout_gravity="top"
         android:scaleType="centerCrop"
-        android:src="@drawable/top" />
+        android:src="@drawable/bg" />
 
-    <!-- Dòng chữ chào mừng ở trên -->
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Chào mừng bạn đến với app"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 
-    <!-- Nút Đăng nhập với Google -->
+<TextView
+android:id="@+id/welcomeText"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="20dp"
+android:layout_gravity="center_horizontal"
+android:fontFamily="sans-serif-medium"
+android:text="Chào mừng bạn đến với app"
+android:textColor="@android:color/black"
+android:textSize="20sp"
+android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/welcomeText"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="40dp"
         android:layout_marginRight="30dp"
-        android:background="@color/colorDefault"
-        android:drawableStart="@drawable/logogg"
-        android:drawablePadding="8dp"
-        android:minWidth="48dp"
-        android:paddingStart="20dp"
-        android:paddingTop="12dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="12dp"
-        android:text="Đăng nhập với Google"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:strokeWidth="1dp" />
+        android:background="@drawable/btn_dn"
+    android:drawableStart="@drawable/logogg"
+    android:drawablePadding="8dp"
+    android:minWidth="48dp"
+    android:text="Đăng nhập với Google"
+    android:textColor="@android:color/white"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:strokeWidth="1dp" />
 
-    <!-- ImageView nằm dưới cùng -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bottom" /> <!-- Thay your_image bằng hình ảnh của bạn -->
-
-</RelativeLayout>
+    </LinearLayout>

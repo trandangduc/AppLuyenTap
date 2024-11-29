@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -18,7 +19,7 @@ import data.ListKhamPha
 
 class explore_itemFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var listView: ListView
     private lateinit var adapter: BaiTapAdapter
     private val listKhamPha = mutableListOf<ListKhamPha>()
 
@@ -32,18 +33,35 @@ class explore_itemFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_explore_item, container, false)
 
-        // Initialize RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        // Set up the adapter for the ListView
+        listView = view.findViewById(R.id.listView)
         adapter = BaiTapAdapter(listKhamPha) { item ->
             onItemClick(item)
         }
-        recyclerView.adapter = adapter
+        listView.adapter = adapter
+
+
 
         // Load data from Firebase
         loadFirebaseData()
 
         return view
+    }
+    private fun setListViewHeightBasedOnItems(listView: ListView) {
+        val listAdapter = listView.adapter ?: return
+        var totalHeight = 0
+        for (i in 0 until listAdapter.count) {
+            val listItem = listAdapter.getView(i, null, listView)
+            listItem.measure(
+                View.MeasureSpec.makeMeasureSpec(listView.width, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.UNSPECIFIED
+            )
+            totalHeight += listItem.measuredHeight
+        }
+        val params = listView.layoutParams
+        params.height = totalHeight + (listView.dividerHeight * (listAdapter.count - 1))
+        listView.layoutParams = params
+        listView.requestLayout()
     }
 
     private fun loadFirebaseData() {
@@ -61,6 +79,7 @@ class explore_itemFragment : Fragment() {
                     Log.d("TAG", "Loaded Item: $item")
                 }
                 adapter.notifyDataSetChanged()
+                setListViewHeightBasedOnItems(listView)
             }
 
             override fun onCancelled(error: DatabaseError) {

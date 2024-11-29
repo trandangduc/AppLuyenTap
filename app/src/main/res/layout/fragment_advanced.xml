@@ -1,133 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdvancedFragment">
 
-    <!-- Sử dụng ScrollView để có thể cuộn nội dung nếu dài hơn màn hình -->
+    <!-- Sử dụng ScrollView để cuộn nội dung nếu dài hơn màn hình -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:background="#f4f4f4"
-        android:clipToPadding="false">
+            android:padding="8dp">
 
-        <!-- Card Bụng Nâng Cao -->
-        <LinearLayout
-            android:id="@+id/title1"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_bellync"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_gravity="center">
+            <!-- Card Bụng Nâng Cao -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:id="@+id/title1"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BỤNG NÂNG CAO"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-medium" /> <!-- Sử dụng font dễ đọc hơn -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_bellync" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BỤNG NÂNG CAO"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Ngực Nâng Cao -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_chestnc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="NGỰC NÂNG CAO"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Cánh Tay Nâng Cao -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_armnc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="CÁNH TAY NÂNG CAO"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Chân Nâng Cao -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/title4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_footnc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="CHÂN NÂNG CAO"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Vai và Lưng Nâng Cao -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/title5"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_backnc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="VAI VÀ LƯNG NÂNG CAO"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-        <!-- Card Ngực Nâng Cao -->
-        <LinearLayout
-            android:id="@+id/title2"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_chestnc"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NGỰC NÂNG CAO"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-medium" />
-
-
-        </LinearLayout>
-
-        <!-- Card Cánh Tay Nâng Cao -->
-        <LinearLayout
-            android:id="@+id/title3"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_armnc"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CÁNH TAY NÂNG CAO"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-medium" />
-
-
-        </LinearLayout>
-
-        <!-- Card Chân Nâng Cao -->
-        <LinearLayout
-            android:id="@+id/title4"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_footnc"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CHÂN NÂNG CAO"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-medium" />
-
-
-        </LinearLayout>
-
-        <!-- Card Vai và Lưng Nâng Cao -->
-        <LinearLayout
-            android:id="@+id/title5"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_backnc"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="VAI VÀ LƯNG NÂNG CAO"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-medium" />
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
-    </FrameLayout>
+    </ScrollView>
+</FrameLayout>

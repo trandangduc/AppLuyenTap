@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,141 +9,160 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="16dp">
 
             <!-- Card bài tập đầu tiên -->
-            <LinearLayout
-                android:id="@+id/title1"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
+                android:id="@+id/title1"
                 android:layout_height="150dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/bg_bellybd"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_gravity="center"
-                android:elevation="4dp"
-                android:translationZ="2dp"
-                android:clipToOutline="true"
-                android:radius="8dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_bellybd" />
 
                 <TextView
-                    android:id="@+id/titleTextView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="BỤNG NGƯỜI BẮT ĐẦU"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium" />
-
-
-            </LinearLayout>
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
             <!-- Card bài tập thứ hai -->
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:id="@+id/title2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_chestbd"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_gravity="center"
-                android:elevation="4dp"
-                android:translationZ="2dp"
-                android:clipToOutline="true"
-                android:radius="8dp">
-
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_chestbd"
+                    android:scaleType="centerCrop"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="NGỰC NGƯỜI BẮT ĐẦU"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium" />
-
-
-            </LinearLayout>
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
             <!-- Card bài tập thứ ba -->
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:id="@+id/title3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_armbd"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_gravity="center"
-                android:elevation="4dp"
-                android:translationZ="2dp"
-                android:clipToOutline="true"
-                android:radius="8dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_armbd"
+                    android:scaleType="centerCrop"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CÁNH TAY  NGƯỜI BẮT ĐẦU"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium" />
-
-            </LinearLayout>
+                    android:layout_gravity="center"
+                    android:text="CÁNH TAY NGƯỜI BẮT ĐẦU"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
             <!-- Card bài tập thứ tư -->
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:id="@+id/title4"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_footbd"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_gravity="center"
-                android:elevation="4dp"
-                android:translationZ="2dp"
-                android:clipToOutline="true"
-                android:radius="8dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_footbd"
+                    android:scaleType="centerCrop"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="CHÂN NGƯỜI BẮT ĐẦU"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium" />
-
-
-            </LinearLayout>
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
             <!-- Card bài tập thứ năm -->
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:id="@+id/title5"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bg_strapbd"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:layout_gravity="center"
-                android:elevation="4dp"
-                android:translationZ="2dp"
-                android:clipToOutline="true"
-                android:radius="8dp">
-
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_strapbd"
+                    android:scaleType="centerCrop"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:text="VAI VÀ LƯNG NGƯỜI BẮT ĐẦU"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:fontFamily="sans-serif-medium" />
-
-
-            </LinearLayout>
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-black"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>

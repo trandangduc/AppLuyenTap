@@ -3,5 +3,8 @@
     <style name="Base.Theme.AppLuyenTap" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="windowNoTitle">true</item>
+        <!-- Tắt ActionBar nếu có -->
+        <item name="windowActionBar">false</item>
     </style>
 </resources>

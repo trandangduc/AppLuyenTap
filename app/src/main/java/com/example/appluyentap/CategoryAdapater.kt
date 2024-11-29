@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,7 @@ import data.Category
 import data.ListKhamPha
 
 class CategoryAdapter(private val categoryList: List<Category>, private val context: Context) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: ListView
     private lateinit var adapter: BaiTapAdapter
     private val listKhamPha = mutableListOf<ListKhamPha>()
     private val database: DatabaseReference by lazy {
@@ -33,18 +34,34 @@ class CategoryAdapter(private val categoryList: List<Category>, private val cont
         // Lấy tên danh mục từ danh sách và gán vào TextView
         val category = categoryList[position]
         holder.categoryName.text = category.Ten
-        recyclerView = holder.itemView.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, RecyclerView.VERTICAL, false)
+        recyclerView = holder.itemView.findViewById(R.id.listView)
+
         adapter = BaiTapAdapter(listKhamPha) { item ->
             onItemClick(item)
         }
         recyclerView.adapter = adapter
 
         // Load data from Firebase
-        loadFirebaseData(category)
+        loadFirebaseData(category,recyclerView)
 
     }
-    private fun loadFirebaseData(category: Category) {
+    private fun setListViewHeightBasedOnItems(listView: ListView) {
+        val listAdapter = listView.adapter ?: return
+        var totalHeight = 0
+        for (i in 0 until listAdapter.count) {
+            val listItem = listAdapter.getView(i, null, listView)
+            listItem.measure(
+                View.MeasureSpec.makeMeasureSpec(listView.width, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.UNSPECIFIED
+            )
+            totalHeight += listItem.measuredHeight
+        }
+        val params = listView.layoutParams
+        params.height = totalHeight + (listView.dividerHeight * (listAdapter.count))
+        listView.layoutParams = params
+        listView.requestLayout()
+    }
+    private fun loadFirebaseData(category: Category, recyclerView: ListView) {
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listKhamPha.clear()
@@ -59,6 +76,7 @@ class CategoryAdapter(private val categoryList: List<Category>, private val cont
                     Log.d("TAG", "Loaded Item: $item")
                 }
                 adapter.notifyDataSetChanged()
+                setListViewHeightBasedOnItems(recyclerView)
             }
 
             override fun onCancelled(error: DatabaseError) {
