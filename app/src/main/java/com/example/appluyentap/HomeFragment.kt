@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(fragmentManager.id, BeginnerFragment())
                 .commit()
-            Toast.makeText(requireContext(), "Người bắt đầu được chọn", Toast.LENGTH_SHORT).show()
+
         }
 
         intermediateTab.setOnClickListener {
@@ -59,7 +59,7 @@ class HomeFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(fragmentManager.id, IntermediateFragment())
                 .commit()
-            Toast.makeText(requireContext(), "Trung bình được chọn", Toast.LENGTH_SHORT).show()
+
         }
 
         advancedTab.setOnClickListener {
@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(fragmentManager.id, AdvancedFragment())
                 .commit()
-            Toast.makeText(requireContext(), "Nâng cao được chọn", Toast.LENGTH_SHORT).show()
+
         }
 
         // Gọi mặc định "Người bắt đầu"

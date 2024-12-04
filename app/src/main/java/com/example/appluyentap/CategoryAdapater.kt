@@ -40,7 +40,7 @@ class CategoryAdapter(private val categoryList: List<Category>, private val cont
             onItemClick(item)
         }
         recyclerView.adapter = adapter
-
+        setListViewHeightBasedOnItems(recyclerView)
         // Load data from Firebase
         loadFirebaseData(category,recyclerView)
 
@@ -55,6 +55,7 @@ class CategoryAdapter(private val categoryList: List<Category>, private val cont
                 View.MeasureSpec.UNSPECIFIED
             )
             totalHeight += listItem.measuredHeight
+            Log.d("ListViewHeight", "Item $i height: ${listItem.measuredHeight}")
         }
         val params = listView.layoutParams
         params.height = totalHeight + (listView.dividerHeight * (listAdapter.count))

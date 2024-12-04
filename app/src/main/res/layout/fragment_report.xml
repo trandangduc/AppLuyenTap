@@ -2,71 +2,66 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="700dp"
     android:layout_margin="16dp"
+    android:backgroundTint="#FFFFFF"
     app:cardCornerRadius="16dp"
-    app:cardElevation="8dp"
-    android:backgroundTint="#FFFFFF">
+    app:cardElevation="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_margin="16dp">
-
+        android:padding="24dp">
         <!-- Tiêu đề báo cáo -->
         <TextView
             android:id="@+id/tvReportTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:text="Báo Cáo Người Dùng"
-            android:textSize="26sp"
-            android:textStyle="bold"
             android:textColor="#FF4081"
-            android:layout_marginBottom="24dp" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChartBMI"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp" />
+
 
         <!-- Tổng số lần tập -->
         <TextView
             android:id="@+id/tvTotalWorkouts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Tổng số lần tập: 0"
-            android:textSize="20sp"
             android:textColor="#333333"
-            android:layout_marginTop="12dp" />
+            android:textSize="20sp" />
 
         <!-- Số lần tập trong tháng -->
         <TextView
             android:id="@+id/tvMonthlyWorkouts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Số lần tập trong tháng: 0"
-            android:textSize="20sp"
             android:textColor="#333333"
-            android:layout_marginTop="12dp" />
-
-
-
-        <!-- Hiển thị giá trị BMI -->
-        <TextView
-            android:id="@+id/tvBMIValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chỉ số BMI: 0.0"
-            android:textSize="20sp"
-            android:textColor="#333333"
-            android:layout_marginTop="8dp" />
-
+            android:textSize="20sp" />
         <!-- Tổng thời gian tập luyện -->
         <TextView
             android:id="@+id/tvTotalWorkoutTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Tổng thời gian tập luyện: 0 giờ"
-            android:textSize="20sp"
             android:textColor="#333333"
-            android:layout_marginTop="12dp" />
+            android:textSize="20sp" />
+
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

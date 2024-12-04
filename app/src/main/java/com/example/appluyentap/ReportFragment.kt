@@ -1,5 +1,6 @@
 package com.example.appluyentap
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,10 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 class ReportFragment : Fragment() {
@@ -14,7 +19,7 @@ class ReportFragment : Fragment() {
     private lateinit var tvTotalWorkouts: TextView
     private lateinit var tvMonthlyWorkouts: TextView
     private lateinit var tvTotalWorkoutTime: TextView
-    private lateinit var tvBMIValue: TextView
+    private lateinit var pieChartBMI: PieChart
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +32,7 @@ class ReportFragment : Fragment() {
         tvTotalWorkouts = view.findViewById(R.id.tvTotalWorkouts)
         tvMonthlyWorkouts = view.findViewById(R.id.tvMonthlyWorkouts)
         tvTotalWorkoutTime = view.findViewById(R.id.tvTotalWorkoutTime)
-        tvBMIValue = view.findViewById(R.id.tvBMIValue)
+        pieChartBMI = view.findViewById(R.id.pieChartBMI)
 
         // Lấy thông tin người dùng từ Firebase
         val user = FirebaseAuth.getInstance().currentUser
@@ -51,22 +56,49 @@ class ReportFragment : Fragment() {
                 tvTotalWorkouts.text = "Tổng số lần tập: $totalWorkouts"
                 tvMonthlyWorkouts.text = "Số lần tập trong tháng: $monthlyWorkouts"
                 tvTotalWorkoutTime.text = "Tổng thời gian tập luyện: ${totalWorkoutTime} phút"
+                // Cập nhật PieChart
+                updatePieChart(bmi)
 
-                // Cập nhật chỉ số BMI
-                tvBMIValue.text = "Chỉ số BMI: %.2f".format(bmi)
-
-                // Tính toán giá trị tiến trình BMI
-                val bmiPercentage = when {
-                    bmi < 18.5 -> 20
-                    bmi in 18.5..24.9 -> ((bmi - 18.5) / (24.9 - 18.5) * 80).toInt() + 20
-                    bmi in 25.0..29.9 -> ((bmi - 25.0) / (29.9 - 25.0) * 50).toInt() + 80
-                    else -> 100
-                }
 
             }
         }
 
         return view
+    }
+    private fun updatePieChart(bmi: Double) {
+        val entries = mutableListOf<PieEntry>()
+        pieChartBMI.setUsePercentValues(false)
+        when {
+            bmi < 18.5 -> {
+                entries.add(PieEntry(bmi.toFloat(), "Thiếu cân"))
+            }
+            bmi in 18.5..24.9 -> {
+                entries.add(PieEntry(bmi.toFloat(), "Bình thường"))
+            }
+            bmi in 25.0..29.9 -> {
+                entries.add(PieEntry(bmi.toFloat(), "Thừa cân"))
+            }
+            else -> {
+                entries.add(PieEntry(bmi.toFloat(), "Béo phì"))
+            }
+        }
+
+        val dataSet = PieDataSet(entries, "Chỉ số BMI")
+        dataSet.colors = listOf(
+            Color.parseColor("#FF7043"), // Thiếu cân
+            Color.parseColor("#66BB6A"), // Bình thường
+            Color.parseColor("#FFA726"), // Thừa cân
+            Color.parseColor("#EF5350")  // Béo phì
+        )
+        dataSet.valueTextSize = 20f
+
+        val pieData = PieData(dataSet)
+        pieData.setValueTextSize(18f)
+        pieChartBMI.data = pieData
+        pieChartBMI.invalidate() // Làm mới biểu đồ
+        pieChartBMI.description.text = "Phân loại BMI"
+        pieChartBMI.setEntryLabelColor(Color.BLACK)
+        pieChartBMI.setUsePercentValues(false)
     }
 }
 

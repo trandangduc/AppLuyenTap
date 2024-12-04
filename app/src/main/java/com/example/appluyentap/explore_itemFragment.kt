@@ -40,7 +40,7 @@ class explore_itemFragment : Fragment() {
         }
         listView.adapter = adapter
 
-
+        setListViewHeightBasedOnItems(listView)
 
         // Load data from Firebase
         loadFirebaseData()
